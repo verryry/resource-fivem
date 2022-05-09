@@ -24,7 +24,6 @@ local Webhooks = {
     ['ooc'] = '',
     ['report'] = '',
     ['me'] = '',
-    ['do'] = '',
     ['pmelding'] = '',
     ['112'] = '',
     ['bans'] = '',
