@@ -22,11 +22,14 @@ Config.BossMenus = {
     ['mechanic'] = {
         vector3(1002.14, -2317.54, 35.32),
     },
+    ['restaurant'] = {
+        vector3(-1206.44, -891.61, 14.0),
+    }
 }
 
 Config.BossMenuZones = {
     ['police'] = {
-        { coords = vector3(462.1, -985.55, 30.73), length = 0.35, width = 0.45, heading = 351.0, minZ = 30.58, maxZ = 30.68 } ,
+        { coords = vector3(462.1, -985.55, 30.73), length = 0.35, width = 0.45, heading = 351.0, minZ = 30.58, maxZ = 30.68 },
     },
     ['ambulance'] = {
         { coords = vector3(335.03, -593.66, 43.28), length = 0.35, width = 0.45, heading = 351.0, minZ = 30.58, maxZ = 30.68 },
@@ -42,6 +45,9 @@ Config.BossMenuZones = {
     },
     ['mechanic'] = {
         { coords = vector3(1002.14, -2317.54, 35.32), length = 1.15, width = 2.6, heading = 353.0, minZ = 43.59, maxZ = 44.99 },
+    },
+    ['restaurant'] = {
+        { coords = vector3(-1206.44, -891.61, 14.0), length = 0.35, width = 0.45, heading = 351.0, minZ = 30.58, maxZ = 30.68 },
     },
 }
 

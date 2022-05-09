@@ -96,7 +96,7 @@ var admin = false
             document.getElementById("max").innerHTML = event.content.max;
           }
           if (event.type == 'close') {
-            document.getElementById("main").innerHTML = '';
+            // document.getElementById("main").innerHTML = '';
             document.getElementById("jobs").innerHTML = '';
             document.getElementById("scoreboard").style.display = "none";
           }
