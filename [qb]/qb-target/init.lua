@@ -70,7 +70,25 @@ Config.CircleZones = {
 }
 
 Config.BoxZones = {
-
+	['atms'] = {
+		name = "atms",
+		coords = vector3(314.56, -593.51, 43.28),
+		length = 1,
+		width = 1,
+		heading=251,
+		debugPoly = false,
+		minZ=42.18,
+  		maxZ=43.78,
+		options = {
+			{
+				event = "qb-atms:server:enteratm",
+				icon = "fas fa-credit-card",
+				label = "Use Atm",
+				job = "ambulance",
+			},
+		},
+		distance = 3.5
+	}
 }
 
 Config.PolyZones = {

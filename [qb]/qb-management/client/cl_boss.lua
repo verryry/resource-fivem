@@ -308,12 +308,14 @@ CreateThread(function()
                 for k, menus in pairs(Config.BossMenus) do
                     for _, coords in ipairs(menus) do
                         if k == PlayerJob.name and PlayerJob.isboss then
+                                DrawMarker(2, coords, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.3, 0.15, 120, 10, 20, 155, false, false, false, 1, false, false, false)
                             if #(pos - coords) < 5.0 then
                                 inRangeBoss = true
                                 if #(pos - coords) <= 1.5 then
                                     nearBossmenu = true
                                     if not shownBossMenu then
                                         exports['qb-core']:DrawText('[E] Open Job Management', 'left')
+                                        -- DrawMarker(2, 335.03, -593.66, 43.28, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.3, 0.3, 0.15, 120, 10, 20, 155, false, false, false, 1, false, false, false)
                                         shownBossMenu = true
                                     end
                                     if IsControlJustReleased(0, 38) then

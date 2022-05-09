@@ -100,9 +100,9 @@ Config.Plates = {
 
 Config.Locations = {
     ["exit"] = vector3(-339.04, -135.53, 39),
-    ["duty"] = vector3(-323.39, -129.6, 39.01),
-    ["stash"] = vector3(-319.49, -131.9, 38.98),
-    ["vehicle"] = vector4(-370.51, -107.88, 38.35, 72.56),
+    ["duty"] = vector3(1022.14, -2290.32, 30.51),
+    ["stash"] = vector3(1017.01, -2291.86, 30.55),
+    ["vehicle"] = vector4(993.89, -2338.35, 30.0, 173.6),
 }
 
 Config.Vehicles = {

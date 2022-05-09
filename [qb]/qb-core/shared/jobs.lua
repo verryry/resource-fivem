@@ -13,30 +13,67 @@ QBShared.Jobs = {
         },
 	},
 	['police'] = {
-		label = 'Law Enforcement',
+		label = 'Police Departement',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
             ['0'] = {
-                name = 'Recruit',
+                name = 'Cadet',
                 payment = 50
             },
 			['1'] = {
-                name = 'Officer',
+                name = 'Officer I',
                 payment = 75
             },
 			['2'] = {
-                name = 'Sergeant',
+                name = 'Officer II',
                 payment = 100
             },
 			['3'] = {
-                name = 'Lieutenant',
+                name = 'Officer III',
                 payment = 125
             },
 			['4'] = {
-                name = 'Chief',
-				isboss = true,
+                name = 'Officer III+1',
                 payment = 150
+            },
+			['5'] = {
+                name = 'Detective I',
+                payment = 175
+            },
+			['6'] = {
+                name = 'Detective II',
+                payment = 200
+            },
+			['7'] = {
+                name = 'Sergeant I',
+                payment = 225
+            },
+			['8'] = {
+                name = 'Sergeant II',
+                payment = 250
+            },
+			['9'] = {
+                name = 'Lieutenant I',
+                payment = 275
+            },
+			['10'] = {
+                name = 'Lieutenant II',
+                payment = 300
+            },
+			['11'] = {
+                name = 'Commander',
+                payment = 325
+            },
+			['12'] = {
+                name = 'Assistant Chief',
+                isboss = true,
+                payment = 350
+            },
+			['13'] = {
+                name = 'Chief',
+                isboss = true,
+                payment = 400
             },
         },
 	},
@@ -46,25 +83,47 @@ QBShared.Jobs = {
 		offDutyPay = false,
 		grades = {
             ['0'] = {
-                name = 'Recruit',
+                name = 'Magang',
                 payment = 50
             },
 			['1'] = {
-                name = 'Paramedic',
+                name = 'Security',
                 payment = 75
             },
 			['2'] = {
-                name = 'Doctor',
+                name = 'Farmasi',
                 payment = 100
             },
 			['3'] = {
-                name = 'Surgeon',
+                name = 'Perawat',
                 payment = 125
             },
 			['4'] = {
-                name = 'Chief',
-				isboss = true,
+                name = 'Dokter Umum',
                 payment = 150
+            },
+			['5'] = {
+                name = 'Dokter Spesialis',
+                payment = 175
+            },
+			['6'] = {
+                name = 'Supervisor',
+                payment = 200
+            },
+			['7'] = {
+                name = 'HRD',
+                isboss = true,
+                payment = 225
+            },
+			['8'] = {
+                name = 'Wakil Direktur',
+                isboss = true,
+                payment = 250
+            },
+			['9'] = {
+                name = 'Direktur',
+                isboss = true,
+                payment = 300
             },
         },
 	},

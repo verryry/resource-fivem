@@ -10,7 +10,7 @@ body {
 }
 
 #bankingContainer {
-    background: #444444 !important;
+    background: #2c5364 !important;
     border-radius: 7px;
     min-height: 800px;
     max-height: 800px;
@@ -27,7 +27,7 @@ body {
 }
 
 .statement:hover {
-    background: rgba(150, 149, 149, 0.5) !important;
+    background: #2c5364 !important;
 }
 
 #v-pills-tabContent,

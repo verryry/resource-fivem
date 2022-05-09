@@ -600,13 +600,6 @@ Config.JobInteractions = {
             icon = 'tasks',
             items = {
                 {
-                    id = 'statuscheck',
-                    title = 'Check Health Status',
-                    icon = 'heartbeat',
-                    type = 'client',
-                    event = 'hospital:client:CheckStatus',
-                    shouldClose = true
-                }, {
                     id = 'checkstatus',
                     title = 'Check status',
                     icon = 'question',

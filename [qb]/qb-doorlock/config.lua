@@ -390,7 +390,7 @@ Config.DoorList = {
 		authorizedJobs = { 'police' },
 		locked = true,
 		pickable = false,
-		distance = 14
+		distance = 2
 	},
 	-- Mission Row Extension
 	-- Briefing room

@@ -541,8 +541,10 @@ else
             inDuty = true
             if not onDuty then
                 exports['qb-core']:DrawText(Lang:t('info.on_duty'),'left')
+                DrawMarker(2, Config.Locations["duty"][1], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.3, 0.15, 120, 10, 20, 155, false, false, false, 1, false, false, false)
             else
                 exports['qb-core']:DrawText(Lang:t('info.off_duty'),'left')
+                DrawMarker(2, Config.Locations["duty"][1], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.3, 0.15, 120, 10, 20, 155, false, false, false, 1, false, false, false)
             end
         else
             inDuty = false
