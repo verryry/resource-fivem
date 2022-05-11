@@ -294,6 +294,14 @@ Config.MenuItems = {
             }
         }
     },
+    [3] = {
+        id = 'vehiclemenu',
+        title = 'Car Control',
+        icon = 'bars',
+        type = 'client',
+        event = 'ccvehmenu:client:openMenu',
+        shouldClose = true
+    },
 }
 
 Config.VehicleDoors = {
@@ -600,6 +608,13 @@ Config.JobInteractions = {
             icon = 'tasks',
             items = {
                 {
+                    id = 'statuscheck',
+                    title = 'Check Health Status',
+                    icon = 'heartbeat',
+                    type = 'client',
+                    event = 'hospital:client:CheckStatus',
+                    shouldClose = true
+                }, {
                     id = 'checkstatus',
                     title = 'Check status',
                     icon = 'question',

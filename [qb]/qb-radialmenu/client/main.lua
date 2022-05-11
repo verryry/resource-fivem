@@ -133,11 +133,11 @@ end
 local function selectOption(t, t2)
     for k, v in pairs(t) do
         if v.items then
-            local found, hasAction, val = selectOption(v.items, t2)
-            if found then return true, hasAction, val end
+            local found, hasAction = selectOption(v.items, t2)
+            if found then return true, hasAction end
         else
             if v.id == t2.id and ((v.event and v.event == t2.event) or v.action) and (not v.canOpen or v.canOpen()) then
-                return true, v.action, v
+                return true, v.action
             end
         end
     end
@@ -333,19 +333,19 @@ end)
 
 RegisterNUICallback('selectItem', function(data)
     local itemData = data.itemData
-    local found, action, data = selectOption(FinalMenuItems, itemData)
+    local found, action = selectOption(FinalMenuItems, itemData)
 
-    if data and found then
+    if itemData and found then
         if action then
-            action(data)
-        elseif data.type == 'client' then
-            TriggerEvent(data.event, data)
-        elseif data.type == 'server' then
-            TriggerServerEvent(data.event, data)
-        elseif data.type == 'command' then
-            ExecuteCommand(data.event)
-        elseif data.type == 'qbcommand' then
-            TriggerServerEvent('QBCore:CallCommand', data.event, data)
+            action(itemData)
+        elseif itemData.type == 'client' then
+            TriggerEvent(itemData.event, itemData)
+        elseif itemData.type == 'server' then
+            TriggerServerEvent(itemData.event, itemData)
+        elseif itemData.type == 'command' then
+            ExecuteCommand(itemData.event)
+        elseif itemData.type == 'qbcommand' then
+            TriggerServerEvent('QBCore:CallCommand', itemData.event, itemData)
         end
     end
 end)
