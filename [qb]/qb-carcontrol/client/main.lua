@@ -1,4 +1,5 @@
 local QBCore = exports['qb-core']:GetCoreObject()
+local MenuItemId = nil
 
 ----- Pulls Job Data -----
 
@@ -19,6 +20,30 @@ end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
     PlayerData = {}
+end)
+
+------ Add Radial Menu Car Control ---------
+local function AddRadialCarControlOption()
+    local Player = PlayerPedId()
+    if IsPedInAnyVehicle(Player) then
+        MenuItemId = exports['qb-radialmenu']:AddOption({
+            id = 'vehiclemenu',
+            title = 'Car Control',
+            icon = 'bars',
+            type = 'client',
+            event = 'ccvehmenu:client:openMenu',
+            shouldClose = true
+        }, MenuItemId)
+    else
+        if MenuItemId ~= nil then
+            exports['qb-radialmenu']:RemoveOption(MenuItemId)
+            MenuItemId = nil
+        end
+    end
+end
+
+RegisterNetEvent('qb-radialmenu:client:onRadialmenuOpen', function()
+    AddRadialCarControlOption()
 end)
 
 ----- Opens Menu ----
