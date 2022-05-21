@@ -8,44 +8,8 @@ QBShared.Gangs = {
             },
         },
 	},
-	['lostmc'] = {
-		label = 'The Lost MC',
-		grades = {
-            ['0'] = {
-                name = 'Recruit'
-            },
-			['1'] = {
-                name = 'Enforcer'
-            },
-			['2'] = {
-                name = 'Shot Caller'
-            },
-			['3'] = {
-                name = 'Boss',
-				isboss = true
-            },
-        },
-	},
-	['ballas'] = {
-		label = 'Ballas',
-		grades = {
-            ['0'] = {
-                name = 'Recruit'
-            },
-			['1'] = {
-                name = 'Enforcer'
-            },
-			['2'] = {
-                name = 'Shot Caller'
-            },
-			['3'] = {
-                name = 'Boss',
-				isboss = true
-            },
-        },
-	},
-	['vagos'] = {
-		label = 'Vagos',
+	['mafia'] = {
+		label = 'Mafia',
 		grades = {
             ['0'] = {
                 name = 'Recruit'
@@ -80,8 +44,8 @@ QBShared.Gangs = {
             },
         },
 	},
-	['families'] = {
-		label = 'Families',
+	['yakuza'] = {
+		label = 'Yakuza',
 		grades = {
             ['0'] = {
                 name = 'Recruit'
@@ -98,8 +62,8 @@ QBShared.Gangs = {
             },
         },
 	},
-	['triads'] = {
-		label = 'Triads',
+	['biker'] = {
+		label = 'Bikers',
 		grades = {
             ['0'] = {
                 name = 'Recruit'
@@ -115,5 +79,95 @@ QBShared.Gangs = {
 				isboss = true
             },
         },
-	}
+	},
+	['gangster'] = {
+		label = 'Gangster',
+		grades = {
+            ['0'] = {
+                name = 'Recruit'
+            },
+			['1'] = {
+                name = 'Enforcer'
+            },
+			['2'] = {
+                name = 'Shot Caller'
+            },
+			['3'] = {
+                name = 'Boss',
+				isboss = true
+            },
+        },
+	},
+	-- ['ballas'] = {
+	-- 	label = 'Ballas',
+	-- 	grades = {
+    --         ['0'] = {
+    --             name = 'Recruit'
+    --         },
+	-- 		['1'] = {
+    --             name = 'Enforcer'
+    --         },
+	-- 		['2'] = {
+    --             name = 'Shot Caller'
+    --         },
+	-- 		['3'] = {
+    --             name = 'Boss',
+	-- 			isboss = true
+    --         },
+    --     },
+	-- },
+	-- ['vagos'] = {
+	-- 	label = 'Vagos',
+	-- 	grades = {
+    --         ['0'] = {
+    --             name = 'Recruit'
+    --         },
+	-- 		['1'] = {
+    --             name = 'Enforcer'
+    --         },
+	-- 		['2'] = {
+    --             name = 'Shot Caller'
+    --         },
+	-- 		['3'] = {
+    --             name = 'Boss',
+	-- 			isboss = true
+    --         },
+    --     },
+	-- },
+	-- ['families'] = {
+	-- 	label = 'Families',
+	-- 	grades = {
+    --         ['0'] = {
+    --             name = 'Recruit'
+    --         },
+	-- 		['1'] = {
+    --             name = 'Enforcer'
+    --         },
+	-- 		['2'] = {
+    --             name = 'Shot Caller'
+    --         },
+	-- 		['3'] = {
+    --             name = 'Boss',
+	-- 			isboss = true
+    --         },
+    --     },
+	-- },
+	-- ['triads'] = {
+	-- 	label = 'Triads',
+	-- 	grades = {
+    --         ['0'] = {
+    --             name = 'Recruit'
+    --         },
+	-- 		['1'] = {
+    --             name = 'Enforcer'
+    --         },
+	-- 		['2'] = {
+    --             name = 'Shot Caller'
+    --         },
+	-- 		['3'] = {
+    --             name = 'Boss',
+	-- 			isboss = true
+    --         },
+    --     },
+	-- }
 }

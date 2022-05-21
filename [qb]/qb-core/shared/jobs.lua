@@ -63,6 +63,7 @@ QBShared.Jobs = {
             },
 			['11'] = {
                 name = 'Commander',
+                isboss = true,
                 payment = 325
             },
 			['12'] = {
@@ -256,23 +257,24 @@ QBShared.Jobs = {
 		offDutyPay = false,
 		grades = {
             ['0'] = {
-                name = 'Recruit',
+                name = 'Magang',
                 payment = 50
             },
 			['1'] = {
-                name = 'Novice',
+                name = 'Pelayan',
                 payment = 75
             },
 			['2'] = {
-                name = 'Experienced',
+                name = 'Koki',
                 payment = 100
             },
 			['3'] = {
-                name = 'Advanced',
+                name = 'Manager',
+                isboss = true,
                 payment = 125
             },
 			['4'] = {
-                name = 'Manager',
+                name = 'Direktur',
 				isboss = true,
                 payment = 150
             },

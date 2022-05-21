@@ -12,13 +12,13 @@ KEY `type` (`type`)
 INSERT INTO `management_funds` (`job_name`, `amount`, `type`) VALUES
 ('police', 0, 'boss'),
 ('ambulance', 0, 'boss'),
+('restaurant', 0, 'boss'),
 ('realestate', 0, 'boss'),
 ('taxi', 0, 'boss'),
 ('cardealer', 0, 'boss'),
 ('mechanic', 0, 'boss'),
-('lostmc', 0, 'gang'),
-('ballas', 0, 'gang'),
-('vagos', 0, 'gang'),
+('mafia', 0, 'gang'),
 ('cartel', 0, 'gang'),
-('families', 0, 'gang'),
-('triads', 0, 'gang');
+('yakuza', 0, 'gang'),
+('biker', 0, 'gang'),
+('gangster', 0, 'gang')
