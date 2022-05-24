@@ -347,7 +347,7 @@ QBShared.Vehicles = {
 		-- ['shop'] = 'pdm',
 	},
 	['tsgr20'] = {							--DLC +set sv_enforceGameBuild 2372
-		['name'] = 'TSGR20,
+		['name'] = 'TSGR20',
 		['brand'] = 'TSGR20',
 		['model'] = 'tsgr20',
 		['price'] = 60000,

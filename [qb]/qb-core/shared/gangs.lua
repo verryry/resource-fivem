@@ -17,7 +17,7 @@ QBShared.Gangs = {
 			['1'] = {
                 name = 'Enforcer'
             },
-			['2'] = {
+			['2'] = { 
                 name = 'Shot Caller'
             },
 			['3'] = {

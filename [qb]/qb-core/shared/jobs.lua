@@ -184,7 +184,7 @@ QBShared.Jobs = {
             },
         },
 	},
-     ['bus'] = {
+    ['bus'] = {
 		label = 'Bus',
 		defaultDuty = true,
 		offDutyPay = false,
