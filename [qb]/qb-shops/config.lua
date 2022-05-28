@@ -254,6 +254,7 @@ Config.Products = {
             info = {},
             type = "item",
             slot = 1,
+            requiredJob = {"mechanic"}
         },
         [2] = {
             name = "repairkit",
@@ -262,6 +263,7 @@ Config.Products = {
             info = {},
             type = "item",
             slot = 2,
+            requiredJob = {"mechanic"}
         },
         [3] = {
             name = "advancedrepairkit",
@@ -270,6 +272,7 @@ Config.Products = {
             info = {},
             type = "item",
             slot = 3,
+            requiredJob = {"mechanic"}
         }, 
         [4] = {
             name = "nitrous",
@@ -278,6 +281,7 @@ Config.Products = {
             info = {},
             type = "item",
             slot = 4,
+            requiredJob = {"mechanic"}
         },
         [5] = {
             name = "tunerlaptop",
@@ -286,6 +290,7 @@ Config.Products = {
             info = {},
             type = "item",
             slot = 5,
+            requiredJob = {"mechanic"}
         },
         [6] = {
             name = "harness",
@@ -294,11 +299,12 @@ Config.Products = {
             info = {},
             type = "item",
             slot = 6,
+            requiredJob = {"mechanic"}
         },
     },
-    ["weedshop"] = {
+    ["blackmarket"] = {
         [1] = {
-            name = "joint",
+            name = "lockpick",
             price = 10,
             amount = 1000,
             info = {},
@@ -306,7 +312,7 @@ Config.Products = {
             slot = 1,
         },
         [2] = {
-            name = "weapon_poolcue",
+            name = "advancedlockpick",
             price = 100,
             amount = 1000,
             info = {},
@@ -314,7 +320,7 @@ Config.Products = {
             slot = 2,
         },
         [3] = {
-            name = "weed_nutrition",
+            name = "electronickit",
             price = 20,
             amount = 1000,
             info = {},
@@ -322,7 +328,7 @@ Config.Products = {
             slot = 3,
         },
         [4] = {
-            name = "empty_weed_bag",
+            name = "trojan_usb",
             price = 2,
             amount = 1000,
             info = {},
@@ -330,12 +336,36 @@ Config.Products = {
             slot = 4,
         },
         [5] = {
-            name = "rolling_paper",
+            name = "thermite",
             price = 2,
             amount = 1000,
             info = {},
             type = "item",
             slot = 5,
+        },
+        [6] = {
+            name = "gatecrack",
+            price = 2,
+            amount = 1000,
+            info = {},
+            type = "item",
+            slot = 6,
+        },
+        [7] = {
+            name = "rolling_paper",
+            price = 2,
+            amount = 1000,
+            info = {},
+            type = "item",
+            slot = 7,
+        },
+        [8] = {
+            name = "empty_weed_bag",
+            price = 2,
+            amount = 1000,
+            info = {},
+            type = "item",
+            slot = 8,
         },
     },
     ["gearshop"] = {
@@ -964,19 +994,19 @@ Config.Locations = {
     },
 
     -- Weedshop Locations
-    -- ["weedshop"] = {
-    --     ["label"] = "Smoke On The Water",
-    --     ["coords"] = vector4(-1171.31, -1570.89, 4.66, 130.03),
-    --     ["ped"] = 'a_m_y_hippy_01',
-    --     ["scenario"] = "WORLD_HUMAN_AA_SMOKE",
-    --     ["radius"] = 1.5,
-    --     ["targetIcon"] = "fas fa-cannabis",
-    --     ["targetLabel"] = "Open Weed Shop",
-    --     ["products"] = Config.Products["weedshop"],
-    --     ["showblip"] = true,
-    --     ["blipsprite"] = 140,
-    --     ["blipcolor"] = 2
-    -- },
+    ["weedshop"] = {
+        ["label"] = "BLACK MARKET",
+        ["coords"] = vector4(3310.71, 5176.47, 19.61, 235.79),
+        ["ped"] = 'a_m_m_hillbilly_01',
+        ["scenario"] = "WORLD_HUMAN_GUARD_STAND",
+        ["radius"] = 1.5,
+        ["targetIcon"] = "fas fa-cannabis",
+        ["targetLabel"] = "Open Black Market",
+        ["products"] = Config.Products["blackmarket"],
+        ["showblip"] = false,
+        ["blipsprite"] = 140,
+        ["blipcolor"] = 2
+    },
 
     -- -- Sea Word Locations
     -- ["seaword"] = {
