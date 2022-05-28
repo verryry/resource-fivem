@@ -370,4 +370,3 @@ exports('getBlackoutState', function() return blackout end)
 exports('getTimeFreezeState', function() return freezeTime end)
 exports('getWeatherState', function() return CurrentWeather end)
 exports('getDynamicWeather', function() return Config.DynamicWeather end)
-

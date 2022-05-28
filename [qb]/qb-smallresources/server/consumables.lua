@@ -195,6 +195,12 @@ QBCore.Functions.CreateUseableItem("advancedlockpick", function(source, item)
     TriggerClientEvent("lockpicks:UseLockpick", source, true)
 end)
 
+QBCore.Functions.CreateUseableItem("skateboard", function(source, item)
+    local Player = QBCore.Functions.GetPlayer(source)
+    TriggerClientEvent("consumables:client:UseSkateboard", source, true)
+end)
+
+
 ----------- / Unused
 
 -- QBCore.Functions.CreateUseableItem("smoketrailred", function(source, item)

@@ -55,45 +55,45 @@ Vehicle Classes:
 Config = Config or {}
 
 Config.Locations = {
-    ['Innocence'] = {
-        settings = {
-            label = 'Bennys Motorworks',
-            welcomeLabel = "Welcome to Benny's Motorworks!",
-            enabled = true,
-        },
-        blip = {
-            label = 'Bennys Motorworks',
-            coords = vector3(-205.6992, -1312.7377, 31.1588),
-            sprite = 72,
-            scale = 0.65,
-            color = 1,
-            display = 4,
-            enabled = true,
-        },
-        categories = {
-            mods = true,
-            turbo = true,
-            repair = true,
-            respray = true,
-            liveries = true,
-            wheels = true,
-            tint = true,
-            plate = true,
-            extras = true,
-            neons = true,
-            xenons = true,
-            horn = true,
-            cosmetics = true,
-        },
-        drawtextui = {
-            text = "Bennys Motorworks"
-        },
-        restrictions = { deniedClasses = { 18 } },
-        zones = {
-            { coords = vector3(-212.55, -1320.56, 31.0), length = 6.0, width = 4.0, heading = 270.0, minZ = 29.88, maxZ = 33.48 },
-            { coords = vector3(-222.47, -1329.73, 31.0), length = 6.0, width = 4.0, heading = 270.0, minZ = 29.88, maxZ = 33.48 },
-        }
-    },
+    -- ['Innocence'] = {
+    --     settings = {
+    --         label = 'Bennys Motorworks',
+    --         welcomeLabel = "Welcome to Benny's Motorworks!",
+    --         enabled = true,
+    --     },
+    --     blip = {
+    --         label = 'Bennys Motorworks',
+    --         coords = vector3(-205.6992, -1312.7377, 31.1588),
+    --         sprite = 72,
+    --         scale = 0.65,
+    --         color = 1,
+    --         display = 4,
+    --         enabled = true,
+    --     },
+    --     categories = {
+    --         mods = true,
+    --         turbo = true,
+    --         repair = true,
+    --         respray = true,
+    --         liveries = true,
+    --         wheels = true,
+    --         tint = true,
+    --         plate = true,
+    --         extras = true,
+    --         neons = true,
+    --         xenons = true,
+    --         horn = true,
+    --         cosmetics = true,
+    --     },
+    --     drawtextui = {
+    --         text = "Bennys Motorworks"
+    --     },
+    --     restrictions = { deniedClasses = { 18 } },
+    --     zones = {
+    --         { coords = vector3(-212.55, -1320.56, 31.0), length = 6.0, width = 4.0, heading = 270.0, minZ = 29.88, maxZ = 33.48 },
+    --         { coords = vector3(-222.47, -1329.73, 31.0), length = 6.0, width = 4.0, heading = 270.0, minZ = 29.88, maxZ = 33.48 },
+    --     }
+    -- },
     ['Power'] = {
         settings = {
             label = 'MYERS Autocare',
@@ -130,11 +130,11 @@ Config.Locations = {
         },
         restrictions = { deniedClasses = { 18 } },
         zones = {
-            { coords = vector3(1020.24, -2309.65, 29.86), length = 6.0, width = 4.0, heading = 270.0, minZ = 29.88, maxZ = 33.48 },
-            { coords = vector3(1019.44, -2315.79, 30.0), length = 6.0, width = 4.0, heading = 270.0, minZ = 29.88, maxZ = 33.48 },
-            { coords = vector3(1019.04, -2322.12, 30.0), length = 6.0, width = 4.0, heading = 270.0, minZ = 29.88, maxZ = 33.48 },
-            { coords = vector3(1019.02, -2328.02, 30.0), length = 6.0, width = 4.0, heading = 270.0, minZ = 29.88, maxZ = 33.48 },
-            { coords = vector3(1018.59, -2334.84, 30.0), length = 6.0, width = 4.0, heading = 270.0, minZ = 29.88, maxZ = 33.48 },
+            { coords = vector3(1019.67, -2309.59, 30.51), length = 6.0, width = 4.0, heading = 270.0, minZ = 29.88, maxZ = 33.48 },
+            { coords = vector3(1019.2, -2315.92, 30.51), length = 6.0, width = 4.0, heading = 270.0, minZ = 29.88, maxZ = 33.48 },
+            { coords = vector3(1019.09, -2322.15, 30.51), length = 6.0, width = 4.0, heading = 270.0, minZ = 29.88, maxZ = 33.48 },
+            { coords = vector3(1019.06, -2328.26, 30.51), length = 6.0, width = 4.0, heading = 270.0, minZ = 29.88, maxZ = 33.48 },
+            { coords = vector3(1018.48, -2334.77, 30.51), length = 6.0, width = 4.0, heading = 270.0, minZ = 29.88, maxZ = 33.48 },
         }
     },
 

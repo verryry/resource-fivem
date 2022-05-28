@@ -13,4 +13,4 @@ server_scripts {
     'server/main.lua'
 }
 
-lua54 'yes'
+lua54 'yes'server_scripts { '@mysql-async/lib/MySQL.lua' }

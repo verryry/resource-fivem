@@ -1019,7 +1019,7 @@ Garages = {
         type = 'public',                --public, job, gang, depot
         vehicleCategories = {'car', 'motorcycle', 'other'},
         drawText = 'Parking',                 --car, air, sea
-        debug = true,
+        debug = false,
         ['ParkingSpots'] = {
             vector4(219.38, -765.95, 30.41, 247.04),
             vector4(218.07, -768.47, 30.41, 248.86),
@@ -1443,7 +1443,7 @@ Garages = {
     --         vector4(449.09, -981.19, 42.69, 92.57)
     --     },
     --     ParkingDistance = 10.0,
-    --     debug = true    
+    --     debug = false    
     -- },
     ['helipad'] = {
         ['Zone'] = {

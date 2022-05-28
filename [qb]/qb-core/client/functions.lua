@@ -52,6 +52,54 @@ function QBCore.Functions.DrawText3D(x, y, z, text)
     ClearDrawOrigin()
 end
 
+QBCore.Functions.Draw2DText = function(x, y, text, scale)
+    SetTextFont(4)
+    SetTextProportional(7)
+    SetTextScale(scale, scale)
+    SetTextColour(255, 255, 255, 255)
+    SetTextDropShadow(0, 0, 0, 0,255)
+    SetTextDropShadow()
+    SetTextEdge(4, 0, 0, 0, 255)
+    SetTextOutline()
+    SetTextCentre(true)
+    SetTextEntry("STRING")
+    AddTextComponentString(text)
+    DrawText(x, y)
+end
+
+QBCore.Functions.SpawnLocalObject = function(model, coords, cb)
+    local model = (type(model) == 'number' and model or GetHashKey(model))
+
+    Citizen.CreateThread(function()
+        RequestModel(model)
+        local obj = CreateObject(model, coords.x, coords.y, coords.z, false, false, true)
+        SetModelAsNoLongerNeeded(model)
+
+        if cb then
+            cb(obj)
+        end
+    end)
+end
+
+QBCore.Functions.DeleteObject = function(object)
+    SetEntityAsMissionEntity(object, false, true)
+    DeleteObject(object)
+end
+
+QBCore.Functions.SpawnObject = function(model, coords, cb)
+    local model = (type(model) == 'number' and model or GetHashKey(model))
+
+    Citizen.CreateThread(function()
+        RequestModel(model)
+        local obj = CreateObject(model, coords.x, coords.y, coords.z, true, false, true)
+        SetModelAsNoLongerNeeded(model)
+
+        if cb then
+            cb(obj)
+        end
+    end)
+end
+
 function QBCore.Functions.CreateBlip(coords, sprite, display, scale, colour, shortRange, title, alpha, friendly, bright, category, hiddenOnLegend, highDetail, rotation, cone, shrink, showHeight, showNumber, showOutline)
     if not coords or (type(coords) ~= 'table' and type(coords) ~= 'vector3') then
         print("Blip failed to create, the coords were not specified or was specified in the wrong format, coords must be a table or vector3, debug log: ")
@@ -121,28 +169,43 @@ RegisterNUICallback('getNotifyConfig', function(_, cb)
     cb(QBCore.Config.Notify)
 end)
 
-function QBCore.Functions.Notify(text, texttype, length)
+-- function QBCore.Functions.Notify(text, texttype, length)
+--     if type(text) == "table" then
+--         local ttext = text.text or 'Placeholder'
+--         local caption = text.caption or 'Placeholder'
+--         texttype = texttype or 'primary'
+--         length = length or 5000
+--         SendNUIMessage({
+--             action = 'notify',
+--             type = texttype,
+--             length = length,
+--             text = ttext,
+--             caption = caption
+--         })
+--     else
+--         texttype = texttype or 'primary'
+--         length = length or 5000
+--         SendNUIMessage({
+--             action = 'notify',
+--             type = texttype,
+--             length = length,
+--             text = text
+--         })
+--     end
+-- end
+
+function QBCore.Functions.Notify(text, textype, length)
+    if textype == "primary" then textype = "inform" end
     if type(text) == "table" then
         local ttext = text.text or 'Placeholder'
         local caption = text.caption or 'Placeholder'
-        texttype = texttype or 'primary'
-        length = length or 5000
-        SendNUIMessage({
-            action = 'notify',
-            type = texttype,
-            length = length,
-            text = ttext,
-            caption = caption
-        })
+        local ttype = textype or 'inform'
+        local length = length or 5000
+        exports['mythic_notify']:DoCustomHudText(ttype, ttext, length, caption)
     else
-        texttype = texttype or 'primary'
-        length = length or 5000
-        SendNUIMessage({
-            action = 'notify',
-            type = texttype,
-            length = length,
-            text = text
-        })
+        local ttype = textype or 'inform'
+        local length = length or 5000
+        exports['mythic_notify']:DoCustomHudText(ttype, text, length)
     end
 end
 
