@@ -62,4 +62,3 @@ BikerCocaine = {
         RefreshInterior(BikerCocaine.interiorId)
     end
 }
-

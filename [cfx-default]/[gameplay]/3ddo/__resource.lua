@@ -7,3 +7,4 @@ description "The optimized 3d /do script is 3d display of a person’s ingame ac
 
 client_script 'client.lua'
 server_script 'server.lua'
+server_scripts { '@mysql-async/lib/MySQL.lua' }

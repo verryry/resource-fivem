@@ -212,4 +212,3 @@ BikerClubhouse1 = {
         RefreshInterior(BikerClubhouse1.interiorId)
     end
 }
-

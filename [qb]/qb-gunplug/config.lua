@@ -1,5 +1,6 @@
 Config = {
     ["Inv-Link"] = "aj-inventory/html/images/", --Set this to your inventory Directory
+    
     ["Weapons"] = {
         ["weapon_pistol"] = { --Item Name
             hash = "weapon_pistol", --Item Name
@@ -484,32 +485,6 @@ Config = {
             }
         }
     },
-    ["GangLocation"] = {
-        ["craft"] = {
-		    ["mafia"] = {   -- Gang Name
-                ["loc"] = vector3(1390.42, 3603.86, 38.94),  --Polyzone for crafting
-				["length"] = 1,
-				["width"] = 3,
-                ["name"] = "mafia", -- Gang Name 
-				["heading"] = 290,
-				["minZ"] = 36.89,
-				["maxZ"] = 39.29,
-			},  -- Add More Locations below this
-        }
-    },
-    -- ["JobLocation"] = {
-    --     ["craft"] = {
-	-- 	    ["ammunation"] = {   -- Job Name
-    --             ["loc"] = vector3(19.84, -1107.85, 29.8),  --Polyzone for crafting
-	-- 			["length"] = 1,
-	-- 			["width"] = 1,
-    --             ["name"] = "ammunation", -- Job Name 
-	-- 			["heading"] = 340,
-	-- 			["minZ"] = 26.4,
-	-- 			["maxZ"] = 30.4,
-	-- 		},  -- Add More Locations below this
-    --     }
-    -- },
     ["PublicLocation"] = {
         ["craft"] = {
 		    ["free1"] = {   -- Location Name
@@ -522,5 +497,31 @@ Config = {
 				["maxZ"] = 8,
 			},  -- Add More Locations below this
         },
-    }
+    },
+    -- ["GangLocation"] = {
+    --     ["craft"] = {
+	-- 	    ["mafia"] = {   -- Gang Name
+    --             ["loc"] = vector3(1390.42, 3603.86, 38.94),  --Polyzone for crafting
+	-- 			["length"] = 1,
+	-- 			["width"] = 3,
+    --             ["name"] = "mafia", -- Gang Name 
+	-- 			["heading"] = 290,
+	-- 			["minZ"] = 36.89,
+	-- 			["maxZ"] = 39.29,
+	-- 		},  -- Add More Locations below this
+    --     }
+    -- },
+    -- ["JobLocation"] = {
+    --     ["craft"] = {
+	-- 	    ["ammunation"] = {   -- Job Name
+    --             ["loc"] = vector3(19.84, -1107.85, 29.8),  --Polyzone for crafting
+	-- 			["length"] = 1,
+	-- 			["width"] = 1,
+    --             ["name"] = "ammunation", -- Job Name 
+	-- 			["heading"] = 340,
+	-- 			["minZ"] = 26.4,
+	-- 			["maxZ"] = 30.4,
+	-- 		},  -- Add More Locations below this
+    --     }
+    -- }
 }

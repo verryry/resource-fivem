@@ -377,6 +377,9 @@ RegisterNetEvent('consumables:client:UseJoint', function()
         end
         TriggerEvent("evidence:client:SetStatus", "weedsmell", 300)
         TriggerEvent('animations:client:SmokeWeed')
+        TrevorEffect()
+        -- TriggerServerEvent('hospital:server:SetArmor', 50)
+        AddArmourToPed(PlayerPedId(), 50)
     end)
 end)
 
@@ -489,6 +492,10 @@ RegisterNetEvent('consumables:client:ResetArmor', function()
     else
         QBCore.Functions.Notify("You\'re not wearing a vest..", "error")
     end
+end)
+
+RegisterNetEvent('consumables:client:UseSkateboard', function()
+    ExecuteCommand('longboard')
 end)
 
 -- RegisterNetEvent('consumables:client:UseRedSmoke', function()

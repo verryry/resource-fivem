@@ -140,6 +140,9 @@ local function OpenTintCraftingMenu()
 end
 
 local function CraftWeapon(weapon)
+    exports["memorygame"]:thermiteminigame(1, 3, 3, 10,
+    function() -- success
+        
     QBCore.Functions.Progressbar('crafting_weapon', 'Crafting '..Config.Weapons[weapon].label, 5000, false, false, {
         disableMovement = true,
         disableCarMovement = true,
@@ -161,53 +164,85 @@ local function CraftWeapon(weapon)
         ClearPedTasks(PlayerPedId())
         QBCore.Functions.Notify('You have cancelled the crafting process', 'error')
     end)
+    end,
+    function() -- failure
+        QBCore.Functions.Notify('You have failed the crafting process', 'error')
+        for k, v in pairs(Config.Weapons[weapon].materials) do
+            TriggerServerEvent('QBCore:Server:RemoveItem', v.item, v.amount)
+            TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items[v.item], "remove")
+       end
+        ClearPedTasks(PlayerPedId())
+        
+    end)
 end
 
 local function CraftAmmo(ammo)
-    QBCore.Functions.Progressbar('crafting_ammo', 'Crafting '..Config.Ammo[ammo].label, 5000, false, false, {
-        disableMovement = true,
-        disableCarMovement = true,
-        disableMouse = false,
-        disableCombat = true,
-    }, {
-        animDict = "mini@repair",
-        anim = "fixing_a_ped",
-        }, {}, {}, function() -- Success
-        QBCore.Functions.Notify("Crafted "..Config.Ammo[ammo].label, 'success')
-        TriggerServerEvent('qb-gunplug:server:craftAmmo', Config.Ammo[ammo].hash)
-        for k, v in pairs(Config.Ammo[ammo].materials) do
-             TriggerServerEvent('QBCore:Server:RemoveItem', v.item, v.amount)
-             TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items[v.item], "remove")
-        end
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+    exports["memorygame"]:thermiteminigame(10, 3, 3, 10,
+    function() -- success
+        QBCore.Functions.Progressbar('crafting_ammo', 'Crafting '..Config.Ammo[ammo].label, 5000, false, false, {
+            disableMovement = true,
+            disableCarMovement = true,
+            disableMouse = false,
+            disableCombat = true,
+        }, {
+            animDict = "mini@repair",
+            anim = "fixing_a_ped",
+            }, {}, {}, function() -- Success
+            QBCore.Functions.Notify("Crafted "..Config.Ammo[ammo].label, 'success')
+            TriggerServerEvent('qb-gunplug:server:craftAmmo', Config.Ammo[ammo].hash)
+            for k, v in pairs(Config.Ammo[ammo].materials) do
+                TriggerServerEvent('QBCore:Server:RemoveItem', v.item, v.amount)
+                TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items[v.item], "remove")
+            end
+            TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+            ClearPedTasks(PlayerPedId())
+        end, function() -- Cancel
+            ClearPedTasks(PlayerPedId())
+            QBCore.Functions.Notify('You have cancelled the crafting process', 'error')
+        end)
+    end,
+    function() -- failure
+        QBCore.Functions.Notify('You have failed the crafting process', 'error')
+        for k, v in pairs(Config.Weapons[weapon].materials) do
+            TriggerServerEvent('QBCore:Server:RemoveItem', v.item, v.amount)
+            TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items[v.item], "remove")
+       end
         ClearPedTasks(PlayerPedId())
-    end, function() -- Cancel
-        ClearPedTasks(PlayerPedId())
-        QBCore.Functions.Notify('You have cancelled the crafting process', 'error')
     end)
 end
 
 local function CraftAttachment(attachment)
-    QBCore.Functions.Progressbar('crafting_ttachment', 'Crafting '..Config.Attachment[attachment].label, 5000, false, false, {
-        disableMovement = true,
-        disableCarMovement = true,
-        disableMouse = false,
-        disableCombat = true,
-    }, {
-        animDict = "mini@repair",
-        anim = "fixing_a_ped",
-        }, {}, {}, function() -- Success
-        QBCore.Functions.Notify("Crafted "..Config.Attachment[attachment].label, 'success')
-        TriggerServerEvent('qb-gunplug:server:craftAttachment', Config.Attachment[attachment].hash)
-        for k, v in pairs(Config.Attachment[attachment].materials) do
-             TriggerServerEvent('QBCore:Server:RemoveItem', v.item, v.amount)
-             TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items[v.item], "remove")
-        end
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+    exports["memorygame"]:thermiteminigame(10, 3, 3, 10,
+    function() -- success
+        QBCore.Functions.Progressbar('crafting_ttachment', 'Crafting '..Config.Attachment[attachment].label, 5000, false, false, {
+            disableMovement = true,
+            disableCarMovement = true,
+            disableMouse = false,
+            disableCombat = true,
+        }, {
+            animDict = "mini@repair",
+            anim = "fixing_a_ped",
+            }, {}, {}, function() -- Success
+            QBCore.Functions.Notify("Crafted "..Config.Attachment[attachment].label, 'success')
+            TriggerServerEvent('qb-gunplug:server:craftAttachment', Config.Attachment[attachment].hash)
+            for k, v in pairs(Config.Attachment[attachment].materials) do
+                TriggerServerEvent('QBCore:Server:RemoveItem', v.item, v.amount)
+                TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items[v.item], "remove")
+            end
+            TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+            ClearPedTasks(PlayerPedId())
+        end, function() -- Cancel
+            ClearPedTasks(PlayerPedId())
+            QBCore.Functions.Notify('You have cancelled the crafting process', 'error')
+        end)
+    end,
+    function() -- failure
+        QBCore.Functions.Notify('You have failed the crafting process', 'error')
+        for k, v in pairs(Config.Weapons[weapon].materials) do
+            TriggerServerEvent('QBCore:Server:RemoveItem', v.item, v.amount)
+            TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items[v.item], "remove")
+       end
         ClearPedTasks(PlayerPedId())
-    end, function() -- Cancel
-        ClearPedTasks(PlayerPedId())
-        QBCore.Functions.Notify('You have cancelled the crafting process', 'error')
     end)
 end
 
@@ -283,105 +318,105 @@ end)
 
 -- Threads
 
-CreateThread(function()
-    for k,v in pairs(Config.GangLocation) do
-        for k, v in pairs(v) do
-         exports['qb-target']:AddBoxZone(v.name, v.loc, v.length, v.width, {
-            name = v.name,
-            heading = v.heading,
-            debugPoly = false,
-            minZ = v.minZ,
-            maxZ = v.maxZ
-    },{
-            options = {
-                {
-                    icon = 'fa-solid fa-gun',
-                    label = 'Craft Weapons',
-                    gang = k,
-                    action = function()
-                        OpenWeaponCraftingMenu()
-                    end,
-                },
-                {
-                    icon = 'fa-solid fa-box',
-                    label = 'Craft Ammo',
-                    gang = k,
-                    action = function()
-                        OpenAmmoCraftingMenu()
-                    end,
-                },
-                {
-                    icon = 'fa-solid fa-box',
-                    label = 'Craft Attachments',
-                    gang = k,
-                    action = function()
-                        OpenAttachmentCraftingMenu()
-                    end,
-                },
-                {
-                    icon = 'fa-solid fa-spray-can',
-                    label = 'Craft Weapon Tints',
-                    gang = k,
-                    action = function()
-                        OpenTintCraftingMenu()
-                    end,
-                },
-            },
-                distance = 1.5
-            })
-        end
-    end
-end)
+-- CreateThread(function()
+--     for k,v in pairs(Config.GangLocation) do
+--         for k, v in pairs(v) do
+--          exports['qb-target']:AddBoxZone(v.name, v.loc, v.length, v.width, {
+--             name = v.name,
+--             heading = v.heading,
+--             debugPoly = false,
+--             minZ = v.minZ,
+--             maxZ = v.maxZ
+--     },{
+--             options = {
+--                 {
+--                     icon = 'fa-solid fa-gun',
+--                     label = 'Craft Weapons',
+--                     gang = k,
+--                     action = function()
+--                         OpenWeaponCraftingMenu()
+--                     end,
+--                 },
+--                 {
+--                     icon = 'fa-solid fa-box',
+--                     label = 'Craft Ammo',
+--                     gang = k,
+--                     action = function()
+--                         OpenAmmoCraftingMenu()
+--                     end,
+--                 },
+--                 {
+--                     icon = 'fa-solid fa-box',
+--                     label = 'Craft Attachments',
+--                     gang = k,
+--                     action = function()
+--                         OpenAttachmentCraftingMenu()
+--                     end,
+--                 },
+--                 {
+--                     icon = 'fa-solid fa-spray-can',
+--                     label = 'Craft Weapon Tints',
+--                     gang = k,
+--                     action = function()
+--                         OpenTintCraftingMenu()
+--                     end,
+--                 },
+--             },
+--                 distance = 1.5
+--             })
+--         end
+--     end
+-- end)
 
-CreateThread(function()
-    for k,v in pairs(Config.JobLocation) do
-        for k, v in pairs(v) do 
-            exports['qb-target']:AddBoxZone(v.name, v.loc, v.length, v.width, {
-                name = v.name,
-                heading = v.heading,
-                debugPoly = false,
-                minZ = v.minZ,
-                maxZ = v.maxZ
-        },{
-            options = {
-                {
-                    icon = 'fa-solid fa-gun',
-                    label = 'Craft Weapons',
-                    job = k,
-                    action = function()
-                        OpenWeaponCraftingMenu()
-                    end,
-                },
-                {
-                    icon = 'fa-solid fa-box',
-                    label = 'Craft Ammo',
-                    job = k,
-                    action = function()
-                        OpenAmmoCraftingMenu()
-                    end,
-                },
-                {
-                    icon = 'fa-solid fa-box',
-                    label = 'Craft Attachments',
-                    job = k,
-                    action = function()
-                        OpenAttachmentCraftingMenu()
-                    end,
-                },
-                {
-                    icon = 'fa-solid fa-spray-can',
-                    label = 'Craft Weapon Tints',
-                    job = k,
-                    action = function()
-                        OpenTintCraftingMenu()
-                    end,
-                },
-            },
-                distance = 1.5
-            })
-        end
-    end
-end)
+-- CreateThread(function()
+--     for k,v in pairs(Config.JobLocation) do
+--         for k, v in pairs(v) do 
+--             exports['qb-target']:AddBoxZone(v.name, v.loc, v.length, v.width, {
+--                 name = v.name,
+--                 heading = v.heading,
+--                 debugPoly = false,
+--                 minZ = v.minZ,
+--                 maxZ = v.maxZ
+--         },{
+--             options = {
+--                 {
+--                     icon = 'fa-solid fa-gun',
+--                     label = 'Craft Weapons',
+--                     job = k,
+--                     action = function()
+--                         OpenWeaponCraftingMenu()
+--                     end,
+--                 },
+--                 {
+--                     icon = 'fa-solid fa-box',
+--                     label = 'Craft Ammo',
+--                     job = k,
+--                     action = function()
+--                         OpenAmmoCraftingMenu()
+--                     end,
+--                 },
+--                 {
+--                     icon = 'fa-solid fa-box',
+--                     label = 'Craft Attachments',
+--                     job = k,
+--                     action = function()
+--                         OpenAttachmentCraftingMenu()
+--                     end,
+--                 },
+--                 {
+--                     icon = 'fa-solid fa-spray-can',
+--                     label = 'Craft Weapon Tints',
+--                     job = k,
+--                     action = function()
+--                         OpenTintCraftingMenu()
+--                     end,
+--                 },
+--             },
+--                 distance = 1.5
+--             })
+--         end
+--     end
+-- end)
 
 CreateThread(function()
     for k,v in pairs(Config.PublicLocation) do
