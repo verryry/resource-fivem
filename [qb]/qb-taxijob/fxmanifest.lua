@@ -35,5 +35,3 @@ files {
 	'html/reset.css',
 	'html/g5-meter.png'
 }
-
-lua54 'yes'

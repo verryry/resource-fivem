@@ -23,5 +23,5 @@ Config.CircleZones = {
 	WeedField = {coords = vector3(278.5, 4383.7, 47.06), name = 'blip_weedfield', color = 25, sprite = 496, radius = 100.0},
 	WeedProcessing = {coords = vector3(2328.66, 2572.17, 46.90), name = 'blip_weedprocessing', color = 25, sprite = 496, radius = 100.0},
 	DrugDealer = {coords = vector3(-1061.75, -1663.49, 4.90), name = 'blip_drugdealer', color = 6, sprite = 378, radius = 25.0},
-	JointProcessing = {coords = vector3(1391.43, 3603.53, 38.94), name = 'blip_jointprocessing', color = 6, sprite = 378, radius = 25.0},
+	JointProcessing = {coords = vector3(1144.5, -1659.25, 36.61), name = 'blip_jointprocessing', color = 6, sprite = 496, radius = 100.0},
 }

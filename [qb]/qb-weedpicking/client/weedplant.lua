@@ -409,7 +409,7 @@ function Processjoint()
 	local playerPed = PlayerPedId()
 
 	TaskStartScenarioInPlace(playerPed, "PROP_HUMAN_PARKING_METER", 0, true)
-	SetEntityHeading(PlayerPedId(), 108.06254)
+	SetEntityHeading(PlayerPedId(), 295.26)
 
 	QBCore.Functions.Progressbar("search_register", "Trying to Process..", 10000, false, true, {
 		disableMovement = true,
@@ -427,7 +427,7 @@ function Processjoint()
 				Wait(1000)
 				timeLeft = timeLeft - 1
 	
-				if GetDistanceBetweenCoords(GetEntityCoords(playerPed), Config.CircleZones.WeedProcessing.coords, false) > 4 then
+				if GetDistanceBetweenCoords(GetEntityCoords(playerPed), Config.CircleZones.JointProcessing.coords, false) > 4 then
 					TriggerServerEvent('qb-weedpicking:cancelProcessing')
 					break
 				end
@@ -436,6 +436,7 @@ function Processjoint()
 		end,
 		function() -- failure
 			TriggerServerEvent('qb-weedpicking:cancelProcessing')
+			ClearPedTasks(PlayerPedId())
 		end)
 	end, function()
 		ClearPedTasks(PlayerPedId())
