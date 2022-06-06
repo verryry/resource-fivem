@@ -116,7 +116,16 @@ Config.GlobalObjectOptions = {
 }
 
 Config.GlobalPlayerOptions = {
-
+	options = {
+		{
+			num = 1,
+			type = "command",
+			event = "givekeys",
+			icon = "fas fa-key",
+			label = "Give Keys"
+		},
+	distance = 4
+	},
 }
 
 Config.Peds = {

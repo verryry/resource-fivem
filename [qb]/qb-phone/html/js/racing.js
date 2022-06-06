@@ -258,9 +258,7 @@ $(document).on('click', '#create-race', function(e){
                     check: "race"
                 }), function(InRace){
                     if (!InRace) {
-                        // $(".racing-create").fadeIn(200);
-                        ClearInputNew()
-                        $('#create-race-app-new').fadeIn(350);
+                        $(".racing-create").fadeIn(200);
                     } else {
                         QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "You're in a race..", "#1DA1F2");
                     }
@@ -276,7 +274,7 @@ $(document).on('click', '#create-race', function(e){
 
 $(document).on('click', '#racing-create-accept', function(e){
     e.preventDefault();
-    var TrackName = $("#racing-create-trackname").val();
+    var TrackName = $(".racing-create-trackname").val();
 
     if (TrackName !== "" && TrackName !== undefined && TrackName !== null) {
         TrackName = DOMPurify.sanitize(TrackName , {
@@ -293,7 +291,7 @@ $(document).on('click', '#racing-create-accept', function(e){
                         TrackName: TrackName
                     }));
                     $(".racing-create").fadeOut(200, function(){
-                        $("#racing-create-trackname").val("");
+                        $(".racing-create-trackname").val("");
                     });
                 } else {
                     QB.Phone.Notifications.Add("fas fa-flag-checkered", "Racing", "This name is not available..", "#1DA1F2");
@@ -310,7 +308,7 @@ $(document).on('click', '#racing-create-accept', function(e){
 $(document).on('click', '#racing-create-cancel', function(e){
     e.preventDefault();
     $(".racing-create").fadeOut(200, function(){
-        $("#racing-create-trackname").val("");
+        $(".racing-create-trackname").val("");
     });
 });
 

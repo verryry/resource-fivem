@@ -15,25 +15,25 @@ function SetupCryptoData(Crypto) {
     CryptoData.Worth = Crypto.Worth;
     CryptoData.WalletId = Crypto.WalletId;
 
-    $(".crypto-action-page-wallet").html("Wallet: "+CryptoData.Portfolio+" bit('s)");
+    $(".crypto-action-page-wallet").html("Wallet: "+CryptoData.Portfolio+" Qbit('s)");
     $(".crypto-walletid").html(CryptoData.WalletId);
     $(".cryptotab-course-list").html("");
     if (CryptoData.History.length > 0) {
         CryptoData.History = CryptoData.History.reverse();
         $.each(CryptoData.History, function(i, change){
             var PercentageChange = ((change.NewWorth - change.PreviousWorth) / change.PreviousWorth) * 100;
-            var PercentageElement = '<span style="color: green;" class="crypto-percentage-change"><i style="color: green; font-weight: bolder; transform: rotate(-45deg);" class="fas fa-arrow-right"></i> +('+Math.ceil(PercentageChange)+'%)</span>';
+            var PercentageElement = '<span style="color: green;" class="crypto-percentage-change"><i style="color: green; transform: rotate(-45deg);" class="fas fa-arrow-right"></i> +('+Math.ceil(PercentageChange)+'%)</span>';
             if (PercentageChange < 0 ) {
                 PercentageChange = (PercentageChange * -1);
-                PercentageElement = '<span style="color: red; font-weight: bolder;" class="crypto-percentage-change"><i style="color: red; font-weight: bolder; transform: rotate(125deg);" class="fas fa-arrow-right"></i> -('+Math.ceil(PercentageChange)+'%)</span>';
+                PercentageElement = '<span style="color: red;" class="crypto-percentage-change"><i style="color: red; transform: rotate(125deg);" class="fas fa-arrow-right"></i> -('+Math.ceil(PercentageChange)+'%)</span>';
             }
             var Element =   '<div class="cryptotab-course-block">' +
                                 '<i class="fas fa-exchange-alt"></i>' +
-                                '<span class="cryptotab-course-block-title">Value change</span>' +
+                                '<span class="cryptotab-course-block-title">Course change</span>' +
                                 '<span class="cryptotab-course-block-happening"><span style="font-size: 1.3vh;">$'+change.PreviousWorth+'</span> to <span style="font-size: 1.3vh;">$'+change.NewWorth+'</span>'+PercentageElement+'</span>' +
                             '</div>';
-
-            $(".cryptotab-course-list").append(Element);
+    
+            $(".cryptotab-course-list").append(Element);                
         });
     }
 
@@ -48,25 +48,25 @@ function UpdateCryptoData(Crypto) {
     CryptoData.Worth = Crypto.Worth;
     CryptoData.WalletId = Crypto.WalletId;
 
-    $(".crypto-action-page-wallet").html("Wallet: "+CryptoData.Portfolio+" bit('s)");
+    $(".crypto-action-page-wallet").html("Wallet: "+CryptoData.Portfolio+" Qbit('s)");
     $(".crypto-walletid").html(CryptoData.WalletId);
     $(".cryptotab-course-list").html("");
     if (CryptoData.History.length > 0) {
         CryptoData.History = CryptoData.History.reverse();
         $.each(CryptoData.History, function(i, change){
             var PercentageChange = ((change.NewWorth - change.PreviousWorth) / change.PreviousWorth) * 100;
-            var PercentageElement = '<span style="color: green; font-weight: bolder;" class="crypto-percentage-change"><i style="color: green; font-weight: bolder; transform: rotate(-45deg); "class="fas fa-arrow-right"></i> +('+Math.ceil(PercentageChange)+'%)</span>';
+            var PercentageElement = '<span style="color: green;" class="crypto-percentage-change"><i style="color: green; transform: rotate(-45deg);" class="fas fa-arrow-right"></i> +('+Math.ceil(PercentageChange)+'%)</span>';
             if (PercentageChange < 0 ) {
                 PercentageChange = (PercentageChange * -1);
-                PercentageElement = '<span style="color: red; font-weight: bolder;" class="crypto-percentage-change"><i style="color: red; font-weight: bolder; transform: rotate(125deg); "class="fas fa-arrow-right"></i> -('+Math.ceil(PercentageChange)+'%)</span>';
+                PercentageElement = '<span style="color: red;" class="crypto-percentage-change"><i style="color: red; transform: rotate(125deg);" class="fas fa-arrow-right"></i> -('+Math.ceil(PercentageChange)+'%)</span>';
             }
             var Element =   '<div class="cryptotab-course-block">' +
                                 '<i class="fas fa-exchange-alt"></i>' +
-                                '<span class="cryptotab-course-block-title">Value change</span>' +
+                                '<span class="cryptotab-course-block-title">Course change</span>' +
                                 '<span class="cryptotab-course-block-happening"><span style="font-size: 1.3vh;">$'+change.PreviousWorth+'</span> to <span style="font-size: 1.3vh;">$'+change.NewWorth+'</span>'+PercentageElement+'</span>' +
                             '</div>';
-
-            $(".cryptotab-course-list").append(Element);
+    
+            $(".cryptotab-course-list").append(Element);                
         });
     }
 
@@ -80,13 +80,13 @@ function RefreshCryptoTransactions(data) {
     if (data.CryptoTransactions.length > 0) {
         data.CryptoTransactions = (data.CryptoTransactions).reverse();
         $.each(data.CryptoTransactions, function(i, transaction){
-            var Title = "<span style='color: green; font-weight: bolder;'>"+transaction.TransactionTitle+"</span>"
-            if (transaction.TransactionTitle == "Sold" || transaction.TransactionTitle == "Transferred") {
-                Title = "<span style='color: red; font-weight: bolder;'>"+transaction.TransactionTitle+"</span>"
+            var Title = "<span style='color: green;'>"+transaction.TransactionTitle+"</span>"
+            if (transaction.TransactionTitle == "Withdrawn") {
+                Title = "<span style='color: red;'>"+transaction.TransactionTitle+"</span>"
             }
             var Element = '<div class="cryptotab-transactions-block"> <i class="fas fa-exchange-alt"></i> <span class="cryptotab-transactions-block-title">'+Title+'</span> <span class="cryptotab-transactions-block-happening">'+transaction.TransactionMessage+'</span></div>';
-
-            $(".cryptotab-transactions-list").append(Element);
+            
+            $(".cryptotab-transactions-list").append(Element);                
         });
     }
 }
@@ -109,36 +109,17 @@ $(document).on('click', '.crypto-header-footer-item', function(e){
 
 $(document).on('click', '.cryptotab-general-action', function(e){
     e.preventDefault();
-    $(".crypto-buy-ammount-for-update").html("0 Dollars");
+
     var Tab = $(this).data('action');
 
-    if(Tab == "buy-crypto"){
-        ClearInputNew()
-        $('#crypto-buy-btn').fadeIn(350);
-    } else if(Tab == "sell-crypto"){
-        ClearInputNew()
-        $('#crypto-sell-btn').fadeIn(350);
-    } else if(Tab == "transfer-crypto"){
-        ClearInputNew()
-        $('#crypto-transfer-btn').fadeIn(350);
-    }
+    $(".crypto-action-page").css({"display":"block"});
+    $(".crypto-action-page").animate({
+        left: 0,
+    }, 300);
+    $(".crypto-action-page-"+Tab).css({"display":"block"});
+    QB.Phone.Functions.HeaderTextColor("black", 300);
+    ActionTab = Tab;
 });
-
-$(".crypto-buy-input").keyup(function(){
-    var MoneyInput = this.value
-    var MoneyAmount = Math.ceil(CryptoData.Worth * MoneyInput)
-
-    $(".crypto-buy-ammount-for-update").html(MoneyAmount+" Dollars");
-});
-
-$(".crypto-sell-input").keyup(function(){
-    var MoneyInput = this.value
-    var MoneyAmount = Math.ceil(CryptoData.Worth * MoneyInput)
-
-    $(".crypto-buy-ammount-for-update").html(MoneyAmount+" Dollars");
-});
-
-
 
 $(document).on('click', '#cancel-crypto', function(e){
     e.preventDefault();
@@ -167,8 +148,8 @@ function CloseCryptoPage() {
 $(document).on('click', '#buy-crypto', function(e){
     e.preventDefault();
 
-    var Coins = $(".crypto-buy-input").val();
-    var Price = Math.ceil(Coins * CryptoData.Worth);
+    var Coins = $(".crypto-action-page-buy-crypto-input-coins").val();
+    var Price = $(".crypto-action-page-buy-crypto-input-money").val();
 
     if ((Coins !== "") && (Price !== "")) {
         if (QB.Phone.Data.PlayerData.money.bank >= Price) {
@@ -180,17 +161,16 @@ $(document).on('click', '#buy-crypto', function(e){
                     UpdateCryptoData(CryptoData)
                     CloseCryptoPage()
                     QB.Phone.Data.PlayerData.money.bank = parseInt(QB.Phone.Data.PlayerData.money.bank) - parseInt(Price);
-                    QB.Phone.Notifications.Add("fas fa-university", "Bank", "&#36; "+Price+",- has been withdrawn from your balance!", "#badc58", 2500);
-                    $('#crypto-buy-btn').fadeOut(350);
+                    QB.Phone.Notifications.Add("fas fa-university", "QBank", "&#36; "+Price+",- has been withdrawn from your balance!", "#badc58", 2500);
                 } else {
-                    QB.Phone.Notifications.Add("fab fa-bitcoin", "Crypto", "You don't have enough money..", "#badc58", 1500);
+                    QB.Phone.Notifications.Add("fas fa-chart-pie", "Crypto", "You don't have enough money..", "#badc58", 1500);
                 }
             });
         } else {
-            QB.Phone.Notifications.Add("fab fa-bitcoin", "Crypto", "You don't have enough money..", "#badc58", 1500);
+            QB.Phone.Notifications.Add("fas fa-chart-pie", "Crypto", "You don't have enough money..", "#badc58", 1500);
         }
     } else {
-        QB.Phone.Notifications.Add("fab fa-bitcoin", "Crypto", "Fill out all fields!", "#badc58", 1500);
+        QB.Phone.Notifications.Add("fas fa-chart-pie", "Crypto", "Fill out all fields!", "#badc58", 1500);
     }
 });
 
@@ -198,9 +178,9 @@ $(document).on('click', '#sell-crypto', function(e){
     e.preventDefault();
     if(e.handled !== true) {
         e.handled = true;
-
-    var Coins = $(".crypto-sell-input").val();
-    var Price = Math.ceil(Coins * CryptoData.Worth);
+    
+    var Coins = $(".crypto-action-page-sell-crypto-input-coins").val();
+    var Price = $(".crypto-action-page-sell-crypto-input-money").val();
 
     if ((Coins !== "") && (Price !== "")) {
         if (CryptoData.Portfolio >= parseInt(Coins)) {
@@ -212,17 +192,16 @@ $(document).on('click', '#sell-crypto', function(e){
                     UpdateCryptoData(CryptoData)
                     CloseCryptoPage()
                     QB.Phone.Data.PlayerData.money.bank = parseInt(QB.Phone.Data.PlayerData.money.bank) + parseInt(Price);
-                    QB.Phone.Notifications.Add("fas fa-university", "Bank", "&#36; "+Price+",- has been added to your balance!", "#badc58", 2500);
-                    $('#crypto-sell-btn').fadeOut(350);
+                    QB.Phone.Notifications.Add("fas fa-university", "QBank", "&#36; "+Price+",- has been added to your balance!", "#badc58", 2500);
                 } else {
-                    QB.Phone.Notifications.Add("fab fa-bitcoin", "Crypto", "You don't have enough bits..", "#badc58", 1500);
+                    QB.Phone.Notifications.Add("fas fa-chart-pie", "Crypto", "You don't have enough Qbits..", "#badc58", 1500);
                 }
             });
         } else {
-            QB.Phone.Notifications.Add("fab fa-bitcoin", "Crypto", "You don't have enough bits..", "#badc58", 1500);
+            QB.Phone.Notifications.Add("fas fa-chart-pie", "Crypto", "You don't have enough Qbits..", "#badc58", 1500);
         }
     } else {
-        QB.Phone.Notifications.Add("fab fa-bitcoin", "Crypto", "Fill out all fields!", "#badc58", 1500);
+        QB.Phone.Notifications.Add("fas fa-chart-pie", "Crypto", "Fill out all fields!", "#badc58", 1500);
     }
     CloseCryptoPage();
     e.handled = false;
@@ -232,8 +211,8 @@ $(document).on('click', '#sell-crypto', function(e){
 $(document).on('click', '#transfer-crypto', function(e){
     e.preventDefault();
 
-    var Coins = $(".crypto-transfer-input").val();
-    var WalletId = $(".crypto-transfer-input-p").val();
+    var Coins = $(".crypto-action-page-transfer-crypto-input-coins").val();
+    var WalletId = $(".crypto-action-page-transfer-crypto-input-walletid").val();
 
     if ((Coins !== "") && (WalletId !== "")) {
         if (CryptoData.Portfolio >= Coins) {
@@ -243,39 +222,46 @@ $(document).on('click', '#transfer-crypto', function(e){
                     WalletId: WalletId,
                 }), function(CryptoData){
                     if (CryptoData == "notenough") {
-                        QB.Phone.Notifications.Add("fab fa-bitcoin", "Crypto", "You don't have enough bits..", "#badc58", 1500);
+                        QB.Phone.Notifications.Add("fas fa-chart-pie", "Crypto", "You don't have enough Qbits..", "#badc58", 1500);
                     } else if (CryptoData == "notvalid") {
                         QB.Phone.Notifications.Add("fas fa-university", "Crypto", "this Wallet-ID doesn't exist!", "#badc58", 2500);
                     } else {
                         UpdateCryptoData(CryptoData)
                         CloseCryptoPage()
                         QB.Phone.Notifications.Add("fas fa-university", "Crypto", "You transferred "+Coins+",- to "+WalletId+"!", "#badc58", 2500);
-                        $('#crypto-transfer-btn').fadeOut(350);
                     }
                 });
             } else {
                 QB.Phone.Notifications.Add("fas fa-university", "Crypto", "You can't transfer to yourself..", "#badc58", 2500);
             }
         } else {
-            QB.Phone.Notifications.Add("fab fa-bitcoin", "Crypto", "You don't have enough bits..", "#badc58", 1500);
+            QB.Phone.Notifications.Add("fas fa-chart-pie", "Crypto", "You don't have enough Qbits..", "#badc58", 1500);
         }
     } else {
-        QB.Phone.Notifications.Add("fab fa-bitcoin", "Crypto", "Fill out all fields!!", "#badc58", 1500);
+        QB.Phone.Notifications.Add("fas fa-chart-pie", "Crypto", "Fill out all fields!!", "#badc58", 1500);
     }
 });
 
+$(".crypto-action-page-buy-crypto-input-money").keyup(function(){
+    var MoneyInput = this.value
+
+    $(".crypto-action-page-buy-crypto-input-coins").val((MoneyInput / CryptoData.Worth).toFixed(6));
+}); 
 
 $(".crypto-action-page-buy-crypto-input-coins").keyup(function(){
     var MoneyInput = this.value
-    var MoneyAmount = Math.ceil(CryptoData.Worth * MoneyInput)
 
-    $(".crypto-action-page-buy-crypto-input-money").html(MoneyAmount+" Dollars");
+    $(".crypto-action-page-buy-crypto-input-money").val(Math.ceil(CryptoData.Worth * MoneyInput));
 });
 
+$(".crypto-action-page-sell-crypto-input-money").keyup(function(){
+    var MoneyInput = this.value
+
+    $(".crypto-action-page-sell-crypto-input-coins").val((MoneyInput / CryptoData.Worth).toFixed(6));
+}); 
 
 $(".crypto-action-page-sell-crypto-input-coins").keyup(function(){
     var MoneyInput = this.value
-    var MoneyAmount = Math.ceil(CryptoData.Worth * MoneyInput)
 
-    $(".crypto-action-page-sell-crypto-input-money").html(MoneyAmount+" Dollars");
+    $(".crypto-action-page-sell-crypto-input-money").val(Math.ceil(CryptoData.Worth * MoneyInput));
 });

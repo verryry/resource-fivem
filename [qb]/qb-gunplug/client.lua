@@ -140,7 +140,7 @@ local function OpenTintCraftingMenu()
 end
 
 local function CraftWeapon(weapon)
-    exports["memorygame"]:thermiteminigame(1, 3, 3, 10,
+    exports["memorygame"]:thermiteminigame(10, 3, 3, 10,
     function() -- success
         
     QBCore.Functions.Progressbar('crafting_weapon', 'Crafting '..Config.Weapons[weapon].label, 5000, false, false, {

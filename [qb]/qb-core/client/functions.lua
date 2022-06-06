@@ -194,19 +194,23 @@ end)
 --     end
 -- end
 
-function QBCore.Functions.Notify(text, textype, length)
-    if textype == "primary" then textype = "inform" end
-    if type(text) == "table" then
-        local ttext = text.text or 'Placeholder'
-        local caption = text.caption or 'Placeholder'
-        local ttype = textype or 'inform'
-        local length = length or 5000
-        exports['mythic_notify']:DoCustomHudText(ttype, ttext, length, caption)
-    else
-        local ttype = textype or 'inform'
-        local length = length or 5000
-        exports['mythic_notify']:DoCustomHudText(ttype, text, length)
-    end
+-- function QBCore.Functions.Notify(text, textype, length)
+--     if textype == "primary" then textype = "inform" end
+--     if type(text) == "table" then
+--         local ttext = text.text or 'Placeholder'
+--         local caption = text.caption or 'Placeholder'
+--         local ttype = textype or 'inform'
+--         local length = length or 5000
+--         exports['mythic_notify']:DoCustomHudText(ttype, ttext, length, caption)
+--     else
+--         local ttype = textype or 'inform'
+--         local length = length or 5000
+--         exports['mythic_notify']:DoCustomHudText(ttype, text, length)
+--     end
+-- end
+
+function QBCore.Functions.Notify(text, texttype, length)
+    exports['np-notify']:Notify(text, texttype, length)
 end
 
 function QBCore.Debug(resource, obj, depth)

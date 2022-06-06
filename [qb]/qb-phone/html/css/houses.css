@@ -5,7 +5,7 @@
     display: none;
     height: 100%;
     width: 100%;
-    background: #202731;
+    background: #2f3640;
     overflow: hidden;
 }
 
@@ -13,6 +13,7 @@
     position: absolute;
     width: 100%;
     height: 5vh;
+    background-color: #353b48;
     top: 6vh;
 }
 
@@ -23,6 +24,8 @@
     height: 100%;
     text-align: center;
     line-height: 5vh;
+    font-family: 'Poppins', sans-serif;
+    border-bottom: .3vh solid rgb(189, 189, 189);
     transition: .075s linear;
 }
 
@@ -33,7 +36,7 @@
 }
 
 .houses-app-header-tab-selected {
-    border-bottom: .3vh solid #8ee074;
+    border-bottom: .3vh solid #c23616;
 }
 
 .houses-app-header-tab-selected > p {
@@ -47,13 +50,20 @@
     margin: 0 auto;
     left: 0vw;
     right: 0;
+    background-color: #464b5241;
+    border-radius: .6vh;
     top: 12vh;
     overflow-x: hidden;
     overflow-y: scroll;
 }
 
 .house-app-myhouses-container::-webkit-scrollbar {
-    display: none;
+    width: .5vh;
+    background-color: rgba(68, 72, 82, 0.788);
+}
+
+.house-app-myhouses-container::-webkit-scrollbar-thumb {
+    background-color: rgb(105, 111, 126);
 }
 
 .house-app-mykeys-container {
@@ -64,28 +74,33 @@
     margin: 0 auto;
     left: 0vw;
     right: 0;
+    background-color: #464b5241;
+    border-radius: .6vh;
     top: 12vh;
     overflow-x: hidden;
     overflow-y: scroll;
 }
 
 .house-app-mykeys-container::-webkit-scrollbar {
-    display: none;
+    width: .5vh;
+    background-color: rgba(68, 72, 82, 0.788);
+}
+
+.house-app-mykeys-container::-webkit-scrollbar-thumb {
+    background-color: rgb(105, 111, 126);
 }
 
 .myhouses-house {
     position: relative;
     height: 7.5vh;
     width: 100%;
-    transition: all 0.05s linear 0s;
-    margin-bottom: 10px;
-    background: #2c465f;
-    border-radius: 0.15rem;
-    box-shadow: 0rem 0rem 0.2rem 0.02rem #000000a6;
+    background-color: #4d505cc5;
+    transition: .05s linear;
+    margin-bottom: .2vh;
 }
 
 .myhouses-house:hover {
-    background-color: #0d1218c0;
+    background-color: #666977c5;
 }
 
 .myhouse-house-icon {
@@ -99,7 +114,7 @@
     text-align: center;
     line-height: 7.5vh;
     color: white;
-    font-size: 1.7vh;
+    font-size: 2.2vh;
 }
 
 .myhouse-house-titel {
@@ -107,7 +122,8 @@
     left: 5.5vh;
     top: 1.7vh;
     color: white;
-    font-size: 1.2vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5vh;
 }
 
 .myhouse-house-details {
@@ -115,6 +131,7 @@
     left: 5.5vh;
     bottom: 1.7vh;
     color: white;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.3vh;
 }
 
@@ -138,9 +155,9 @@
     margin: 0 auto;
     left: 0vw;
     right: 0;
-    background-color: #202731;
+    background-color: rgb(238, 238, 238);
     border-radius: .5vh;
-    box-shadow:
+    box-shadow: 
     inset 0 0 1vh .2vh rgba(0, 0, 0, 0.281),
     0 0 1vh .2vh rgba(0, 0, 0, 0.253);
     top: 15vh;
@@ -150,9 +167,10 @@
     position: absolute;
     width: 100%;
     height: 5vh;
-    color: rgb(255 255 255);
+    color: rgb(27, 27, 27);
     text-align: center;
     line-height: 5vh;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.8vh;
     border-bottom: .1vh solid rgba(0, 0, 0, 0.26);
 }
@@ -164,6 +182,7 @@
     width: 12vh;
     height: 5vh;
     color: white;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.5vh;
     border-radius: .3vh;
     top: 6vh;
@@ -190,20 +209,27 @@
 }
 
 #myhouse-option-close {
-    background-color: #f5a15b;
-    color: black;
+    background-color: #c23616;
 }
 
 #myhouse-option-close:hover {
-    background-color: #c27e47;
+    background-color: #e84118;
+}
+
+#myhouse-option-transfer-confirm {
+    background-color: #27ae60;
+}
+
+#myhouse-option-transfer-confirm:hover {
+    background-color: #2ecc71;
 }
 
 #myhouse-option-transfer-back {
-    background-color: #8ee074;
+    background-color: #c23616;
 }
 
 #myhouse-option-transfer-back:hover {
-    background-color: #6cac59;
+    background-color: #e74c3c;
 }
 
 .myhouse-option-transfer-container {
@@ -212,10 +238,11 @@
     height: 50%;
     margin: 0 auto;
     left: 35vw;
+    /* left: 0; */
     right: 0;
-    background-color: #202731;
+    background-color: rgb(238, 238, 238);
     border-radius: .5vh;
-    box-shadow:
+    box-shadow: 
     inset 0 0 1vh .2vh rgba(0, 0, 0, 0.281),
     0 0 1vh .2vh rgba(0, 0, 0, 0.253);
     top: 15vh;
@@ -227,10 +254,11 @@
     height: 50%;
     margin: 0 auto;
     left: 35vw;
+    /* left: 0; */
     right: 0;
-    background-color: #202731;
+    background-color: rgb(238, 238, 238);
     border-radius: .5vh;
-    box-shadow:
+    box-shadow: 
     inset 0 0 1vh .2vh rgba(0, 0, 0, 0.281),
     0 0 1vh .2vh rgba(0, 0, 0, 0.253);
     top: 15vh;
@@ -240,9 +268,10 @@
     position: absolute;
     width: 100%;
     height: 5vh;
-    color: rgb(255 255 255);
+    color: rgb(27, 27, 27);
     text-align: center;
     line-height: 5vh;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.8vh;
     border-bottom: .1vh solid rgba(0, 0, 0, 0.26);
 }
@@ -257,10 +286,10 @@
     top: 7.5vh;
     border: none;
     outline: none;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.8vh;
     text-indent: 1vh;
-    color: black;
-    background: rgb(255 255 255 / 63%);
+    background: rgba(223, 223, 223, 0.5);
     border-bottom: .3vh solid #c0392b;
     transition: .05s linear;
 }
@@ -276,11 +305,11 @@
 
 #myhouse-option-keys-back {
     top: 22vh;
-    background-color: #f5a15b;
+    background-color: #c23616;
 }
 
 #myhouse-option-keys-back:hover {
-    background-color: #c27e47;
+    background-color: #e74c3c;
 }
 
 .keys-container {
@@ -301,12 +330,13 @@
 
 .house-key-holder {
     display: inline-block;
-    max-width: 90%;
+    max-width: 50%;
     white-space: nowrap;
     overflow: hidden !important;
     text-overflow: ellipsis;
     position: absolute;
     padding: 1.2vh;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.5vh;
     color: white;
 }
@@ -367,15 +397,15 @@
     position: relative;
     width: 100%;
     height: 7vh;
-    margin-bottom: 10px;
+    background-color: #3a4047;
+    border-radius: 0.7vh;
+    margin-bottom: 0.5vh;
+
     transition: 0.1s ease;
-    background: #2c465f;
-    border-radius: 0.15rem;
-    box-shadow: 0rem 0rem 0.2rem 0.02rem #000000a6;
 }
 
 .mykeys-key:hover {
-    background-color: #0d1218c0;
+    background-color: #4e565f;
 }
 
 .mykeys-key-label {
@@ -383,7 +413,8 @@
     top: 0;
     left: 0;
     color: white;
-    font-size: 1.3vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8vh;
     margin: 1vh;
 }
 
@@ -391,7 +422,8 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    color: white;
+    color: rgb(153, 153, 153);
+    font-family: 'Poppins', sans-serif;
     font-size: 1.2vh;
     margin: 1vh;
 }

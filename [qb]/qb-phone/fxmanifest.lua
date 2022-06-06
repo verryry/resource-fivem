@@ -1,14 +1,14 @@
 fx_version 'cerulean'
 game 'gta5'
 
-author 'Booya#0001'
-description 'Edits and additionals with Jerzy#9709\'s assistance. Original inspiration and editing from amir_expert#1911'
-version 'Release'
+description 'QB-Phone'
+version '1.0.0'
 
 ui_page 'html/index.html'
 
 shared_scripts {
     'config.lua',
+	'@qb-core/config.lua',
     '@qb-apartments/config.lua',
     '@qb-garages/config.lua',
 }
@@ -18,10 +18,7 @@ client_scripts {
     'client/animation.lua'
 }
 
-server_scripts {
-    'server/main.lua',
-    '@oxmysql/lib/MySQL.lua'
-}
+server_script 'server/main.lua'
 
 files {
     'html/*.html',
@@ -34,7 +31,3 @@ files {
     'html/img/backgrounds/*.png',
     'html/img/apps/*.png',
 }
-
-lua54 'yes'
-
-dependency '/assetpacks'
