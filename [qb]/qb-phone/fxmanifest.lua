@@ -8,7 +8,6 @@ ui_page 'html/index.html'
 
 shared_scripts {
     'config.lua',
-	'@qb-core/config.lua',
     '@qb-apartments/config.lua',
     '@qb-garages/config.lua',
 }
@@ -18,7 +17,10 @@ client_scripts {
     'client/animation.lua'
 }
 
-server_script 'server/main.lua'
+server_scripts {
+    '@oxmysql/lib/MySQL.lua',
+    'server/main.lua'
+}
 
 files {
     'html/*.html',
@@ -31,3 +33,5 @@ files {
     'html/img/backgrounds/*.png',
     'html/img/apps/*.png',
 }
+
+lua54 'yes'

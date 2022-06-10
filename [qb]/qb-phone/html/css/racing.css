@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 .racing-app {
     display: none;
     height: 100%;
     width: 100%;
-    background-color: #191e25;
+    background-color: rgb(26, 31, 38, 90%);
+    /* background-color: rgb(31, 31, 31); */
     overflow: hidden;
 }
 
@@ -21,7 +23,8 @@
     background-color: rgba(43, 42, 42, 0);
     text-indent: 1.9vh;
     line-height: 14vh;
-    color: white;
+    color: rgb(255, 255, 255);
+    /* font-family: 'Poppins', sans-serif; */
     font-family: 'Poppins', sans-serif;
     font-size: 1.8vh;
     text-shadow: .1vh .1vh 0px #000000;
@@ -29,7 +32,7 @@
 
 .racing-races {
     position: absolute;
-    background-color: rgb(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     width: 85%;
     height: 35vh;
     top: 10vh;
@@ -42,7 +45,7 @@
 
 .racing-buttons {
     position: absolute;
-    bottom: 1.2vh;
+    bottom: 3.5vh;
     width: 85%;
     height: 4.5vh;
     margin: 0 auto;
@@ -65,18 +68,19 @@
     color: white;
     line-height: 4.6vh;
     font-size: 1.4vh;
+    /* font-family: 'Poppins', sans-serif; */
     font-family: 'Poppins', sans-serif;
     text-shadow: .05vh .05vh 0px #000000b2;
 }
 
 #setup-race {
     width: 35%;
-    background-color: #146bdc;
+    background-color: #0097e6;
 }
 
 #leaderboards-race {
     width: 20%;
-    background-color: orange;
+    background-color: #e1b12c;
     font-size: 1.6vh;
 }
 
@@ -117,6 +121,7 @@
     position: absolute;
     left: 1.5vh;
     top: 1vh;
+    /* font-family: 'Poppins', sans-serif; */
     font-family: 'Poppins', sans-serif;
     color: black;
     font-size: 1.4vh;
@@ -126,6 +131,7 @@
     position: absolute;
     left: 1.5vh;
     top: 3.3vh;
+    /* font-family: 'Poppins', sans-serif; */
     font-family: 'Poppins', sans-serif;
     color: black;
     font-size: 1.4vh;
@@ -143,6 +149,7 @@
     position: relative;
     float: left;
     font-size: 1vh;
+    /* font-family: 'Poppins', sans-serif; */
     font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
     background-color: rgb(41, 41, 41);
@@ -189,7 +196,7 @@
 }
 
 #quit-race {
-    background-color: #c23616;
+    background-color: #0078e9;
 }
 
 #join-race:hover {
@@ -214,7 +221,8 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #191e25;
+    background-color: rgb(26, 31, 38, 90%);
+    /* background-color: rgb(31, 31, 31); */
     z-index: 102;
     left: -30vh;
 }
@@ -238,6 +246,7 @@
     left: 2vh;
     top: 9.5vh;
     color: white;
+    /* font-family: 'Poppins', sans-serif; */
     font-family: 'Poppins', sans-serif;
 }
 
@@ -311,7 +320,7 @@
     padding: 10px;
     transition: all .2s ease-in-out;
     cursor: pointer
-} 
+}
 
 .dropdown .dropdown-menu {
     padding: 0;
@@ -331,6 +340,7 @@
     left: 2vh;
     top: 20vh;
     color: white;
+    /* font-family: 'Poppins', sans-serif; */
     font-family: 'Poppins', sans-serif;
 }
 
@@ -344,6 +354,7 @@
     outline: none;
     background-color: transparent;
     border-bottom: .2vh solid #fff;
+    /* font-family: 'Poppins', sans-serif; */
     font-family: 'Poppins', sans-serif;
     color: white;
     transition: .1s linear;
@@ -366,6 +377,7 @@
     left: 2vh;
     top: 30.5vh;
     color: white;
+    /* font-family: 'Poppins', sans-serif; */
     font-family: 'Poppins', sans-serif;
 }
 
@@ -374,13 +386,14 @@
     left: 2vh;
     top: 33vh;
     color: white;
-    background-color: #146bdc;
+    background-color: #273c75;
     padding: .5vh;
     padding-left: 1vh;
     padding-right: 1vh;
     border-radius: 4vh;
+    /* font-family: 'Poppins', sans-serif; */
     font-family: 'Poppins', sans-serif;
-    box-shadow: inset 0 0 .3vh 0 rgba(0, 0, 0, 0.8);
+    box-shadow: inset 0 0 .3vh 0 rgba(0, 0, 0, 0.4);
 }
 
 .racing-setup-information-creator {
@@ -388,11 +401,12 @@
     left: 2vh;
     top: 37vh;
     color: white;
-    background-color: #146bdc;
+    background-color: #273c75;
     padding: .5vh;
     padding-left: 1vh;
     padding-right: 1vh;
     border-radius: 4vh;
+    /* font-family: 'Poppins', sans-serif; */
     font-family: 'Poppins', sans-serif;
     box-shadow: inset 0 0 .3vh 0 rgba(0, 0, 0, 0.4);
 }
@@ -402,18 +416,19 @@
     left: 2vh;
     top: 41vh;
     color: white;
-    background-color: #146bdc;
+    background-color: #273c75;
     padding: .5vh;
     padding-left: 1vh;
     padding-right: 1vh;
     border-radius: 4vh;
+    /* font-family: 'Poppins', sans-serif; */
     font-family: 'Poppins', sans-serif;
     box-shadow: inset 0 0 .3vh 0 rgba(0, 0, 0, 0.4);
 }
 
 .racing-setup-buttons {
     position: absolute;
-    bottom: 2vh;
+    bottom: 6vh;
     width: 60%;
     height: 5.5vh;
     margin: 0 auto;
@@ -459,7 +474,8 @@
     position: absolute;
     left: 1.41vh;
     top: 1.2vh;
-    color: white;
+    color: rgb(26, 31, 38, 90%);
+    /* font-family: 'Poppins', sans-serif; */
     font-family: 'Poppins', sans-serif;
 }
 
@@ -472,9 +488,10 @@
     border: none;
     outline: none;
     background-color: transparent;
-    border-bottom: .2vh solid rgb(0, 0, 0);
+    border-bottom: .2vh solid rgb(26, 31, 38, 90%);
+    /* font-family: 'Poppins', sans-serif; */
     font-family: 'Poppins', sans-serif;
-    color: white;
+    color: rgb(26, 31, 38, 90%);
     transition: .1s linear;
 }
 
@@ -496,7 +513,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: .5vh;
     z-index: 102;
     pointer-events: all;
@@ -506,13 +523,13 @@
     position: absolute;
     width: 80%;
     height: 15vh;
-    background-color: #191e25;
+    background-color: white;
     margin: 0 auto;
     left: 0;
     right: 0;
     top: 16vh;
     border-radius: .8vh;
-    box-shadow: inset 0 0 .3vh 0 rgba(0, 0, 0, 0.9);
+    box-shadow: inset 0 0 .3vh 0 rgba(0, 0, 0, 0.4);
 }
 
 .racing-create-buttons {
@@ -543,11 +560,11 @@
 }
 
 #racing-create-accept {
-    background-color: green;
+    background-color: #4ece3b;
 }
 
 #racing-create-cancel {
-    background-color: red;
+    background-color: #d33013;
 }
 
 #racing-create-accept:hover {
@@ -564,13 +581,15 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #191e25;
+    background-color: rgb(26, 31, 38, 90%);
+    /* background-color: rgb(31, 31, 31); */
     z-index: 102;
     left: -30vh;
 }
 
 .racing-leaderboards {
     position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
     width: 85%;
     height: 35vh;
     top: 13vh;
@@ -586,6 +605,7 @@
     right: 2.3vh;
     top: 10vh;
     color: white;
+    /* font-family: 'Poppins', sans-serif; */
     font-family: 'Poppins', sans-serif;
 }
 
@@ -594,24 +614,25 @@
     margin-bottom: .2vh;
     width: 100%;
     height: 7vh;
-    background-color: rgb(255,255,255, 0.4);
+    background-color: rgb(230, 230, 230);
     transition: .1s linear;
-    border-bottom: .2vh solid #146bdc;
+    border-bottom: .2vh solid #181818;
     margin-bottom: .5vh;
     z-index: 100;
-    box-shadow: inset 0 0 .3vh 0 rgba(0, 0, 0, 0.7);
+    box-shadow: inset 0 0 .3vh 0 rgba(0, 0, 0, 0.4);
 }
 
 .racing-leaderboard-item:hover {
-    background-color: rgb(255,255,255, 0.6);
+    background-color: rgb(206, 206, 206);
 }
 
 .racing-leaderboard-item-name {
     position: absolute;
     left: 1.5vh;
     top: 1vh;
+    /* font-family: 'Poppins', sans-serif; */
     font-family: 'Poppins', sans-serif;
-    color: white;
+    color: black;
     font-size: 1.4vh;
 }
 
@@ -619,8 +640,9 @@
     position: absolute;
     left: 1.5vh;
     top: 3.5vh;
+    /* font-family: 'Poppins', sans-serif; */
     font-family: 'Poppins', sans-serif;
-    color: white;
+    color: rgb(32, 32, 32);
     font-size: 1.2vh;
 }
 
@@ -641,7 +663,7 @@
     right: 0;
     width: 80%;
     height: 60%;
-    background-color: #191e25;
+    background-color: white;
     top: 11vh;
     box-shadow: inset 0 0 .3vh 0 rgba(0, 0, 0, 0.4);
     border-radius: .5vh;
@@ -650,12 +672,13 @@
 .racing-leaderboard-details-block-trackname {
     text-align: center;
     line-height: 6vh;
+    /* font-family: 'Poppins', sans-serif; */
     font-family: 'Poppins', sans-serif;
     font-size: 1.8vh;
-    color: white;
+    color: black;
     width: 100%;
     height: 6vh;
-    border-bottom: .2vh solid #146bdc;
+    border-bottom: .2vh solid rgba(0, 0, 0, 0.527);
 }
 
 .racing-leaderboard-details-block-list {
@@ -667,7 +690,6 @@
     right: 0;
     top: 9.5vh;
     overflow-y: scroll;
-    color:white;
     /* background-color: rgba(77, 2, 2, 0.685); */
 }
 
@@ -680,12 +702,12 @@
     right: 1.5vh;
     top: 1.2vh;
     font-size: 1.7vh;
-    color: red;
+    color: black;
     transition: .05s linear;
 }
 
 .racing-leaderboard-details-back:hover {
-    color: rgb(206, 30, 30, 0.6);
+    color: rgb(206, 30, 30);
 }
 
 .row {
@@ -693,7 +715,7 @@
 	display: block;
 	width: 100%;
 	height: 40px;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #AFAFAF;
     font-size: 1vh;
     left: 1.4vh;
 }
@@ -723,16 +745,16 @@
     left: 0;
     right: 0;
     top: 6.8vh;
+    /* font-family: 'Poppins', sans-serif; */
     font-family: 'Poppins', sans-serif;
-    color:white;
 }
 
 .racing-leaderboards-button {
     position: absolute;
-    bottom: 2vh;
+    bottom: 3.5vh;
     width: 70%;
     height: 5vh;
-    background-color: red;
+    background-color: #d33013;
     margin: 0 auto;
     left: 0;
     right: 0;
@@ -746,5 +768,5 @@
 }
 
 .racing-leaderboards-button:hover {
-   background-color: rgb(206, 30, 30, 0.6);
+    background-color: #eb391a;
 }

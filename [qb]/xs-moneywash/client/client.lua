@@ -24,14 +24,11 @@ function  OpenMenu()
     
     exports["memorygame"]:thermiteminigame(Config.Hardness, 7, 7, 5,
     function() -- success
-        print("success")
        TriggerEvent('XSMoneyWash:OpenMenu2')
-        QBCore.Functions.Notify(Config.HackDoneTXT, "error", 5000)
-        print(dialog.amount)
+        QBCore.Functions.Notify(Config.HackDoneTXT, "success", 5000)
     end,
     function() -- failure
-        print("failure")
-        QBCore.Functions.Notify(Config.HackFailedTXT, "error", 5000)
+        QBCore.Functions.Notify(Config.HackFailedTXT, "success", 5000)
     end)
 
 end

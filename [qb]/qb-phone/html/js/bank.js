@@ -1,3 +1,5 @@
+var FoccusedBank = null;
+
 $(document).on('click', '.bank-app-account', function(e){
     var copyText = document.getElementById("iban-account");
     copyText.select();
@@ -45,8 +47,7 @@ $(document).on('click', '.bank-app-header-button', function(e){
 })
 
 QB.Phone.Functions.DoBankOpen = function() {
-    let money = QB.Phone.Data.PlayerData.money.bank
-    money = money.toFixed();
+    QB.Phone.Data.PlayerData.money.bank = (QB.Phone.Data.PlayerData.money.bank).toFixed();
     $(".bank-app-account-number").val(QB.Phone.Data.PlayerData.charinfo.account);
     $(".bank-app-account-balance").html("&#36; "+QB.Phone.Data.PlayerData.money.bank);
     $(".bank-app-account-balance").data('balance', QB.Phone.Data.PlayerData.money.bank);
@@ -100,7 +101,7 @@ $(document).on('click', '#accept-transfer', function(e){
     var amountData = $(".bank-app-account-balance").data('balance');
 
     if (iban != "" && amount != "") {
-            $.post('https://' + GetParentResourceName() + '/CanTransferMoney', JSON.stringify({
+            $.post('https://qb-phone/CanTransferMoney', JSON.stringify({
                 sendTo: iban,
                 amountOf: amount,
             }), function(data){
@@ -138,7 +139,7 @@ $(document).on('click', '.pay-invoice', function(event){
     var BankBalance = $(".bank-app-account-balance").data('balance');
 
     if (BankBalance >= InvoiceData.amount) {
-        $.post('https://' + GetParentResourceName() + '/PayInvoice', JSON.stringify({
+        $.post('https://qb-phone/PayInvoice', JSON.stringify({
             sender: InvoiceData.sender,
             amount: InvoiceData.amount,
             society: InvoiceData.society,
@@ -172,7 +173,7 @@ $(document).on('click', '.decline-invoice', function(event){
     var InvoiceId = $(this).parent().parent().attr('id');
     var InvoiceData = $("#"+InvoiceId).data('invoicedata');
 
-    $.post('https://' + GetParentResourceName() + '/DeclineInvoice', JSON.stringify({
+    $.post('https://qb-phone/DeclineInvoice', JSON.stringify({
         sender: InvoiceData.sender,
         amount: InvoiceData.amount,
         society: InvoiceData.society,

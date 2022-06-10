@@ -7,8 +7,6 @@ RegisterNetEvent('XSMoneyWash:StartWash', function(amount)
     if Player.Functions.GetItemByName(Config.MarkedBillsName) ~= nil  then
     local markedbills = Player.Functions.GetItemByName(Config.MarkedBillsName)
 local posokostizitomarked =  markedbills.info.worth
-print(amount)
-print(posokostizitomarked)
     local price1 = posokostizitomarked  *  amount
     if  Player.Functions.RemoveItem(Config.MarkedBillsName, amount) then
         Player.Functions.AddMoney("cash", price1, "Money Wash")
